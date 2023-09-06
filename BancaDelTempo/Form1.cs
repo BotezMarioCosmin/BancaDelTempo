@@ -24,5 +24,27 @@ namespace BancaDelTempo
         {
             lblTimeLive.Text = DateTime.Now.ToString("HH : mm : ss");
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            pnlHome.Show();
+        }
+
+        public void hidePanels()
+        {
+            pnlHome.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
