@@ -1,6 +1,6 @@
 ﻿namespace BancaDelTempo
 {
-    partial class Login
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.lblTimeLive = new System.Windows.Forms.Label();
             this.timerTimeLive = new System.Windows.Forms.Timer(this.components);
             this.pn1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBank = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBank)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTimeLive
             // 
             this.lblTimeLive.AutoSize = true;
-            this.lblTimeLive.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeLive.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTimeLive.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeLive.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblTimeLive.Location = new System.Drawing.Point(11, 9);
             this.lblTimeLive.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimeLive.Name = "lblTimeLive";
-            this.lblTimeLive.Size = new System.Drawing.Size(113, 30);
+            this.lblTimeLive.Size = new System.Drawing.Size(101, 28);
             this.lblTimeLive.TabIndex = 1;
             this.lblTimeLive.Text = "HH : mm";
             this.lblTimeLive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,7 +65,7 @@
             // 
             // pn1
             // 
-            this.pn1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pn1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.pn1.Location = new System.Drawing.Point(43, 257);
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(300, 1);
@@ -72,102 +73,109 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnLogin.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Bauhaus 93", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.btnLogin.Location = new System.Drawing.Point(43, 369);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(300, 46);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "LOG IN";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(83, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 26);
-            this.textBox1.TabIndex = 9;
+            this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBoxUsername.Location = new System.Drawing.Point(83, 224);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(260, 26);
+            this.textBoxUsername.TabIndex = 9;
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox2.Location = new System.Drawing.Point(83, 290);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 26);
-            this.textBox2.TabIndex = 13;
+            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBoxPassword.Location = new System.Drawing.Point(83, 290);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(260, 26);
+            this.textBoxPassword.TabIndex = 13;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel1.Location = new System.Drawing.Point(43, 323);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 1);
             this.panel1.TabIndex = 12;
             // 
-            // pictureBox3
+            // pictureBoxPassword
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(43, 283);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxPassword.Image = global::BancaDelTempo.Properties.Resources.hide;
+            this.pictureBoxPassword.Location = new System.Drawing.Point(43, 283);
+            this.pictureBoxPassword.Name = "pictureBoxPassword";
+            this.pictureBoxPassword.Size = new System.Drawing.Size(34, 38);
+            this.pictureBoxPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPassword.TabIndex = 14;
+            this.pictureBoxPassword.TabStop = false;
+            this.pictureBoxPassword.Click += new System.EventHandler(this.pictureBoxPassword_Click);
             // 
-            // pictureBox2
+            // pictureBoxUser
             // 
-            this.pictureBox2.Image = global::BancaDelTempo.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(43, 217);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
+            this.pictureBoxUser.Location = new System.Drawing.Point(43, 217);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(34, 38);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUser.TabIndex = 11;
+            this.pictureBoxUser.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxBank
             // 
-            this.pictureBox1.Image = global::BancaDelTempo.Properties.Resources.bank;
-            this.pictureBox1.Location = new System.Drawing.Point(129, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 118);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxBank.Image = global::BancaDelTempo.Properties.Resources.bank;
+            this.pictureBoxBank.Location = new System.Drawing.Point(129, 63);
+            this.pictureBoxBank.Name = "pictureBoxBank";
+            this.pictureBoxBank.Size = new System.Drawing.Size(126, 118);
+            this.pictureBoxBank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBank.TabIndex = 10;
+            this.pictureBoxBank.TabStop = false;
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(390, 517);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.pictureBoxPassword);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBoxUser);
+            this.Controls.Add(this.pictureBoxBank);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pn1);
             this.Controls.Add(this.lblTimeLive);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Login";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banca del Tempo > Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBank)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,11 +186,11 @@
         private System.Windows.Forms.Timer timerTimeLive;
         private System.Windows.Forms.Panel pn1;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.PictureBox pictureBoxBank;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
+        private System.Windows.Forms.PictureBox pictureBoxPassword;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Panel panel1;
     }
 }
