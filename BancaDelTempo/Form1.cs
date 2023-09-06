@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace BancaDelTempo
 {
-    public partial class FormMain : Form
+    public partial class Login : Form
     {
-        string hours_minutes = DateTime.Now.ToString("HH : mm : ss");
-        public FormMain()
+        string hours_minutes = DateTime.Now.ToString("HH : mm");
+        public Login()
         {
             InitializeComponent();
             lblTimeLive.Text = hours_minutes;
@@ -22,29 +22,7 @@ namespace BancaDelTempo
 
         private void timerTimeLive_Tick(object sender, EventArgs e)
         {
-            lblTimeLive.Text = DateTime.Now.ToString("HH : mm : ss");
+            lblTimeLive.Text = DateTime.Now.ToString("HH : mm");
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            hidePanels();
-            pnlHome.Show();
-        }
-
-        public void hidePanels()
-        {
-            pnlHome.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }
