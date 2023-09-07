@@ -16,7 +16,6 @@ namespace BancaDelTempo
         string username;
         string password;
 
-        string currentPassword;
         bool passwordShown = false;
 
         bool isLoggedIn=false;
@@ -31,6 +30,10 @@ namespace BancaDelTempo
             sr.Close();
             lblTimeLive.Text = hours_minutes;
             timerTimeLive.Start();
+            //////////////////////////////////
+            this.Hide();
+            FormMain f = new FormMain();
+            f.ShowDialog();
         }
 
         private void timerTimeLive_Tick(object sender, EventArgs e)

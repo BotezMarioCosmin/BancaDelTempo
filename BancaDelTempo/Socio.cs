@@ -101,5 +101,10 @@ namespace BancaDelTempo
         { 
             _debito = nuovoDebito;
         }
+        
+        public override string ToString()
+        {
+            return string.Format("Socio:\n\tCognome: "+Cognome+"\n\tNome: "+Nome+"\n\tTelefono: "+Telefono);
+        }
     }
 }
