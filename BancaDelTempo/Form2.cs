@@ -38,8 +38,11 @@ namespace BancaDelTempo
 
             aggiungiAListView();
             pnlSettings.Hide();
+            pnlSegreteria.Hide();
 
+            pnlSoci.Location = new Point(315, 12);
             pnlSettings.Location = new Point(315, 12);
+            pnlSegreteria.Location = new Point(315, 12);
         }
 
         public string leggiParametroUser(string filePath, int index)
@@ -65,33 +68,41 @@ namespace BancaDelTempo
                 item.SubItems.Add(s.Telefono);
                 item.SubItems.Add(s.Debito.ToString());
 
-                listViewElencoSoci.Items.Add(item);
+                listViewSettings.Items.Add(item);
             }
-            listSoci = leggiFileJson(elencoSociJsonPath);
+            foreach (var s in listSoci)
+            {
+                if (s.Debito != 0)
+                {
+                    ListViewItem item = new ListViewItem(s.Cognome);
+                    item.SubItems.Add(s.Nome);
+                    item.SubItems.Add(s.Telefono);
+                    item.SubItems.Add(s.Debito.ToString());
+
+                    listViewElencoSoci.Items.Add(item);
+                }
+            }
 
             foreach (var s in listSoci)
             {
                 ListViewItem item = new ListViewItem(s.Cognome);
                 item.SubItems.Add(s.Nome);
                 item.SubItems.Add(s.Telefono);
-                item.SubItems.Add(s.Debito.ToString());
 
-                listViewSettings.Items.Add(item);
+                listViewSegreteria.Items.Add(item);
             }
+            listSoci = leggiFileJson(elencoSociJsonPath);
         }
 
+        public void refreshJsonFile(List<Socio> ls, string path)
+        {
+            string nuovoJsonText = JsonConvert.SerializeObject(ls, Formatting.Indented);
+            File.WriteAllText(path, nuovoJsonText);
+        }
 
         private void timerTimeLive_Tick(object sender, EventArgs e)
         {
             lblTimeLive.Text = DateTime.Now.ToString("HH : mm");
-        }
-
-        private void btnEliminaSocio_Click(object sender, EventArgs e)
-        {
-            if (listViewElencoSoci.Items.Count>0)
-            {
-                listViewElencoSoci.Items.Remove(listViewElencoSoci.SelectedItems[0]);
-            }
         }
 
         private void btnApriFileJSON_Click(object sender, EventArgs e)
@@ -121,9 +132,24 @@ namespace BancaDelTempo
 
         public List<Socio> leggiFileJson(string jsonFilePath)
         {
-            string jsonText = File.ReadAllText(jsonFilePath);
-            List<Socio> soci = JsonConvert.DeserializeObject<List<Socio>>(jsonText);
-            return soci;
+            if (File.Exists(jsonFilePath))
+            {
+                try
+                {
+                    string jsonText = File.ReadAllText(jsonFilePath);
+                    List<Socio> soci = JsonConvert.DeserializeObject<List<Socio>>(jsonText);
+                    return soci;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                File.WriteAllText(jsonFilePath, "[]");
+            }
+            return new List<Socio>();
         }
 
         public void aggiungiSocioJson(string jsonFilePath, Socio nuovoSocio)
@@ -143,25 +169,43 @@ namespace BancaDelTempo
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            listViewSettings.Items.Clear();
+            aggiungiAListView();
             pnlSoci.Hide();
-            lblDebito.Hide();
             pnlSettings.Show();
+            pnlSegreteria.Hide();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            listViewElencoSoci.Items.Clear();
+            aggiungiAListView();
             pnlSettings.Hide();
             pnlSoci.Show();
-            lblDebito.Show();
+            pnlSegreteria.Hide();
         }
 
         private void btnImpostazioniEliminaSocio_Click(object sender, EventArgs e)
         {
             if (listViewSettings.Items.Count > 0)
             {
-                listViewSettings.Items.Remove(listViewSettings.SelectedItems[0]);
-            }
+                ListViewItem selectedItem = listViewSettings.SelectedItems[0];
+                string telefonoSocio = selectedItem.SubItems[2].Text;
 
+                List<Socio> elencoTmp = leggiFileJson(elencoSociJsonPath);
+                for (int i = 0; i < elencoTmp.Count(); i++)
+                {
+                    if (elencoTmp[i].Telefono == telefonoSocio)
+                    {
+                        elencoTmp.RemoveAt(i);
+                    }
+                }
+                listViewSettings.Items.Remove(listViewSettings.SelectedItems[0]);
+                refreshJsonFile(elencoTmp, elencoSociJsonPath);
+                listViewElencoSoci.Items.Clear();
+                listViewSettings.Items.Clear();
+                aggiungiAListView();
+            }
         }
 
         private void btnImpostazioniAggiungiSocio_Click(object sender, EventArgs e)
@@ -302,6 +346,45 @@ namespace BancaDelTempo
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnApriFileJson2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //path del file
+                string exeFolder = Application.StartupPath;
+                string filePath = System.IO.Path.Combine(exeFolder, elencoSociJsonPath);
+
+                //verifica dell'esistenza del file
+                if (System.IO.File.Exists(filePath))
+                {
+                    //apre il file con notepad
+                    Process.Start("notepad.exe", filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Il file non esiste.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnSegreteria_Click(object sender, EventArgs e)
+        {
+            pnlSoci.Hide();
+            pnlSegreteria.Show();
+            listViewSegreteria.Items.Clear();
+
+            aggiungiAListView();
+        }
+
+        private void btnApriFileJsonSegreteria_Click(object sender, EventArgs e)
+        {
+            btnApriFileJSON_Click(sender, e);
         }
     }
 

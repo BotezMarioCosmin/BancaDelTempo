@@ -34,13 +34,15 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnPrestazioni = new System.Windows.Forms.Button();
             this.btnSegreteria = new System.Windows.Forms.Button();
+            this.lblDebito = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.lblTimeLive = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.timerTimeLive = new System.Windows.Forms.Timer(this.components);
-            this.lblDebito = new System.Windows.Forms.Label();
             this.pnlSoci = new System.Windows.Forms.Panel();
+            this.lblHomeView = new System.Windows.Forms.Label();
             this.btnApriFileJSON = new System.Windows.Forms.Button();
             this.listViewElencoSoci = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,9 +50,18 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlSettings = new System.Windows.Forms.Panel();
+            this.btnImpostazioniEliminaSocio = new System.Windows.Forms.Button();
+            this.btnImpostazioniAggiungiSocio = new System.Windows.Forms.Button();
+            this.lblModificaFile = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblUserUpload = new System.Windows.Forms.Label();
+            this.btnUserUploadPhoto = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSettings = new System.Windows.Forms.Label();
             this.textBoxDebito = new System.Windows.Forms.TextBox();
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnApriFileJson2 = new System.Windows.Forms.Button();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxCognome = new System.Windows.Forms.TextBox();
             this.listViewSettings = new System.Windows.Forms.ListView();
@@ -58,20 +69,18 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblSettings = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnUserUploadPhoto = new System.Windows.Forms.Button();
-            this.lblUserUpload = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblModificaFile = new System.Windows.Forms.Label();
-            this.btnImpostazioniAggiungiSocio = new System.Windows.Forms.Button();
-            this.btnImpostazioniEliminaSocio = new System.Windows.Forms.Button();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.pnlSegreteria = new System.Windows.Forms.Panel();
+            this.btnApriFileJsonSegreteria = new System.Windows.Forms.Button();
+            this.listViewSegreteria = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.pnlSoci.SuspendLayout();
             this.pnlSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
+            this.pnlSegreteria.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +89,7 @@
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnPrestazioni);
             this.panel1.Controls.Add(this.btnSegreteria);
+            this.panel1.Controls.Add(this.lblDebito);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.lblTimeLive);
             this.panel1.Controls.Add(this.lblUser);
@@ -133,6 +143,19 @@
             this.btnSegreteria.TabIndex = 14;
             this.btnSegreteria.Text = "Segreteria";
             this.btnSegreteria.UseVisualStyleBackColor = false;
+            this.btnSegreteria.Click += new System.EventHandler(this.btnSegreteria_Click);
+            // 
+            // lblDebito
+            // 
+            this.lblDebito.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebito.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblDebito.Location = new System.Drawing.Point(2, 496);
+            this.lblDebito.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDebito.Name = "lblDebito";
+            this.lblDebito.Size = new System.Drawing.Size(298, 54);
+            this.lblDebito.TabIndex = 11;
+            this.lblDebito.Text = "Debito: nnn";
+            this.lblDebito.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnHome
             // 
@@ -188,31 +211,42 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
+            this.pictureBoxUser.Location = new System.Drawing.Point(95, 31);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(106, 96);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUser.TabIndex = 0;
+            this.pictureBoxUser.TabStop = false;
+            // 
             // timerTimeLive
             // 
             this.timerTimeLive.Interval = 1000;
             this.timerTimeLive.Tick += new System.EventHandler(this.timerTimeLive_Tick);
             // 
-            // lblDebito
-            // 
-            this.lblDebito.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDebito.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblDebito.Location = new System.Drawing.Point(307, 34);
-            this.lblDebito.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDebito.Name = "lblDebito";
-            this.lblDebito.Size = new System.Drawing.Size(278, 54);
-            this.lblDebito.TabIndex = 11;
-            this.lblDebito.Text = "Debito: nnn";
-            this.lblDebito.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnlSoci
             // 
+            this.pnlSoci.Controls.Add(this.lblHomeView);
             this.pnlSoci.Controls.Add(this.btnApriFileJSON);
             this.pnlSoci.Controls.Add(this.listViewElencoSoci);
-            this.pnlSoci.Location = new System.Drawing.Point(315, 96);
+            this.pnlSoci.Location = new System.Drawing.Point(775, 326);
             this.pnlSoci.Name = "pnlSoci";
-            this.pnlSoci.Size = new System.Drawing.Size(944, 573);
+            this.pnlSoci.Size = new System.Drawing.Size(934, 648);
             this.pnlSoci.TabIndex = 12;
+            // 
+            // lblHomeView
+            // 
+            this.lblHomeView.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeView.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblHomeView.Location = new System.Drawing.Point(2, 0);
+            this.lblHomeView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHomeView.Name = "lblHomeView";
+            this.lblHomeView.Size = new System.Drawing.Size(927, 96);
+            this.lblHomeView.TabIndex = 17;
+            this.lblHomeView.Text = "Home: visualizza debiti";
+            this.lblHomeView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnApriFileJSON
             // 
@@ -221,9 +255,9 @@
             this.btnApriFileJSON.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApriFileJSON.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApriFileJSON.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnApriFileJSON.Location = new System.Drawing.Point(726, 520);
+            this.btnApriFileJSON.Location = new System.Drawing.Point(726, 604);
             this.btnApriFileJSON.Name = "btnApriFileJSON";
-            this.btnApriFileJSON.Size = new System.Drawing.Size(203, 44);
+            this.btnApriFileJSON.Size = new System.Drawing.Size(208, 44);
             this.btnApriFileJSON.TabIndex = 16;
             this.btnApriFileJSON.Text = "Apri file JSON";
             this.btnApriFileJSON.UseVisualStyleBackColor = false;
@@ -241,9 +275,9 @@
             this.listViewElencoSoci.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.listViewElencoSoci.FullRowSelect = true;
             this.listViewElencoSoci.HideSelection = false;
-            this.listViewElencoSoci.Location = new System.Drawing.Point(0, 21);
+            this.listViewElencoSoci.Location = new System.Drawing.Point(0, 99);
             this.listViewElencoSoci.Name = "listViewElencoSoci";
-            this.listViewElencoSoci.Size = new System.Drawing.Size(929, 494);
+            this.listViewElencoSoci.Size = new System.Drawing.Size(934, 499);
             this.listViewElencoSoci.TabIndex = 11;
             this.listViewElencoSoci.UseCompatibleStateImageBehavior = false;
             this.listViewElencoSoci.View = System.Windows.Forms.View.Details;
@@ -281,14 +315,128 @@
             this.pnlSettings.Controls.Add(this.lblSettings);
             this.pnlSettings.Controls.Add(this.textBoxDebito);
             this.pnlSettings.Controls.Add(this.textBoxTelefono);
-            this.pnlSettings.Controls.Add(this.button1);
+            this.pnlSettings.Controls.Add(this.btnApriFileJson2);
             this.pnlSettings.Controls.Add(this.textBoxNome);
             this.pnlSettings.Controls.Add(this.textBoxCognome);
             this.pnlSettings.Controls.Add(this.listViewSettings);
-            this.pnlSettings.Location = new System.Drawing.Point(318, 16);
+            this.pnlSettings.Location = new System.Drawing.Point(878, 212);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(944, 657);
             this.pnlSettings.TabIndex = 19;
+            // 
+            // btnImpostazioniEliminaSocio
+            // 
+            this.btnImpostazioniEliminaSocio.BackColor = System.Drawing.Color.Red;
+            this.btnImpostazioniEliminaSocio.FlatAppearance.BorderSize = 0;
+            this.btnImpostazioniEliminaSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpostazioniEliminaSocio.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpostazioniEliminaSocio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnImpostazioniEliminaSocio.Location = new System.Drawing.Point(10, 613);
+            this.btnImpostazioniEliminaSocio.Name = "btnImpostazioniEliminaSocio";
+            this.btnImpostazioniEliminaSocio.Size = new System.Drawing.Size(203, 44);
+            this.btnImpostazioniEliminaSocio.TabIndex = 25;
+            this.btnImpostazioniEliminaSocio.Text = "Elimina";
+            this.btnImpostazioniEliminaSocio.UseVisualStyleBackColor = false;
+            this.btnImpostazioniEliminaSocio.Click += new System.EventHandler(this.btnImpostazioniEliminaSocio_Click);
+            // 
+            // btnImpostazioniAggiungiSocio
+            // 
+            this.btnImpostazioniAggiungiSocio.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnImpostazioniAggiungiSocio.FlatAppearance.BorderSize = 0;
+            this.btnImpostazioniAggiungiSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpostazioniAggiungiSocio.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpostazioniAggiungiSocio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnImpostazioniAggiungiSocio.Location = new System.Drawing.Point(436, 231);
+            this.btnImpostazioniAggiungiSocio.Name = "btnImpostazioniAggiungiSocio";
+            this.btnImpostazioniAggiungiSocio.Size = new System.Drawing.Size(203, 44);
+            this.btnImpostazioniAggiungiSocio.TabIndex = 24;
+            this.btnImpostazioniAggiungiSocio.Text = "Aggiungi";
+            this.btnImpostazioniAggiungiSocio.UseVisualStyleBackColor = false;
+            this.btnImpostazioniAggiungiSocio.Click += new System.EventHandler(this.btnImpostazioniAggiungiSocio_Click);
+            // 
+            // lblModificaFile
+            // 
+            this.lblModificaFile.AutoSize = true;
+            this.lblModificaFile.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModificaFile.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblModificaFile.Location = new System.Drawing.Point(8, 180);
+            this.lblModificaFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblModificaFile.Name = "lblModificaFile";
+            this.lblModificaFile.Size = new System.Drawing.Size(299, 39);
+            this.lblModificaFile.TabIndex = 23;
+            this.lblModificaFile.Text = "Modifica file JSON";
+            this.lblModificaFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel3.Location = new System.Drawing.Point(10, 170);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(923, 1);
+            this.panel3.TabIndex = 20;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnDelete.Location = new System.Drawing.Point(224, 114);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(106, 44);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Elimina";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lblUserUpload
+            // 
+            this.lblUserUpload.AutoSize = true;
+            this.lblUserUpload.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserUpload.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblUserUpload.Location = new System.Drawing.Point(8, 72);
+            this.lblUserUpload.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserUpload.Name = "lblUserUpload";
+            this.lblUserUpload.Size = new System.Drawing.Size(119, 39);
+            this.lblUserUpload.TabIndex = 21;
+            this.lblUserUpload.Text = "Utente";
+            this.lblUserUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnUserUploadPhoto
+            // 
+            this.btnUserUploadPhoto.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnUserUploadPhoto.FlatAppearance.BorderSize = 0;
+            this.btnUserUploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserUploadPhoto.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserUploadPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnUserUploadPhoto.Location = new System.Drawing.Point(15, 114);
+            this.btnUserUploadPhoto.Name = "btnUserUploadPhoto";
+            this.btnUserUploadPhoto.Size = new System.Drawing.Size(203, 44);
+            this.btnUserUploadPhoto.TabIndex = 20;
+            this.btnUserUploadPhoto.Text = "Carica foto";
+            this.btnUserUploadPhoto.UseVisualStyleBackColor = false;
+            this.btnUserUploadPhoto.Click += new System.EventHandler(this.btnUserUploadPhoto_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel2.Location = new System.Drawing.Point(10, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(923, 1);
+            this.panel2.TabIndex = 19;
+            // 
+            // lblSettings
+            // 
+            this.lblSettings.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettings.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblSettings.Location = new System.Drawing.Point(6, 4);
+            this.lblSettings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSettings.Name = "lblSettings";
+            this.lblSettings.Size = new System.Drawing.Size(926, 54);
+            this.lblSettings.TabIndex = 17;
+            this.lblSettings.Text = "Impostazioni";
+            this.lblSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxDebito
             // 
@@ -314,19 +462,20 @@
             this.textBoxTelefono.Text = "Telefono";
             this.textBoxTelefono.Click += new System.EventHandler(this.textBoxTelefono_Click);
             // 
-            // button1
+            // btnApriFileJson2
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.button1.Location = new System.Drawing.Point(729, 613);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 44);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Apri file JSON";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnApriFileJson2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnApriFileJson2.FlatAppearance.BorderSize = 0;
+            this.btnApriFileJson2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApriFileJson2.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApriFileJson2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnApriFileJson2.Location = new System.Drawing.Point(729, 613);
+            this.btnApriFileJson2.Name = "btnApriFileJson2";
+            this.btnApriFileJson2.Size = new System.Drawing.Size(203, 44);
+            this.btnApriFileJson2.TabIndex = 16;
+            this.btnApriFileJson2.Text = "Apri file JSON";
+            this.btnApriFileJson2.UseVisualStyleBackColor = false;
+            this.btnApriFileJson2.Click += new System.EventHandler(this.btnApriFileJson2_Click);
             // 
             // textBoxNome
             // 
@@ -391,129 +540,75 @@
             this.columnHeader8.Text = "Debito (min)";
             this.columnHeader8.Width = 200;
             // 
-            // lblSettings
+            // pnlSegreteria
             // 
-            this.lblSettings.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSettings.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblSettings.Location = new System.Drawing.Point(6, 4);
-            this.lblSettings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSettings.Name = "lblSettings";
-            this.lblSettings.Size = new System.Drawing.Size(926, 54);
-            this.lblSettings.TabIndex = 17;
-            this.lblSettings.Text = "Impostazioni";
-            this.lblSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlSegreteria.Controls.Add(this.label1);
+            this.pnlSegreteria.Controls.Add(this.btnApriFileJsonSegreteria);
+            this.pnlSegreteria.Controls.Add(this.listViewSegreteria);
+            this.pnlSegreteria.Location = new System.Drawing.Point(318, 21);
+            this.pnlSegreteria.Name = "pnlSegreteria";
+            this.pnlSegreteria.Size = new System.Drawing.Size(934, 648);
+            this.pnlSegreteria.TabIndex = 17;
             // 
-            // panel2
+            // btnApriFileJsonSegreteria
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(10, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(923, 1);
-            this.panel2.TabIndex = 19;
+            this.btnApriFileJsonSegreteria.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnApriFileJsonSegreteria.FlatAppearance.BorderSize = 0;
+            this.btnApriFileJsonSegreteria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApriFileJsonSegreteria.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApriFileJsonSegreteria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnApriFileJsonSegreteria.Location = new System.Drawing.Point(726, 604);
+            this.btnApriFileJsonSegreteria.Name = "btnApriFileJsonSegreteria";
+            this.btnApriFileJsonSegreteria.Size = new System.Drawing.Size(208, 44);
+            this.btnApriFileJsonSegreteria.TabIndex = 16;
+            this.btnApriFileJsonSegreteria.Text = "Apri file JSON";
+            this.btnApriFileJsonSegreteria.UseVisualStyleBackColor = false;
+            this.btnApriFileJsonSegreteria.Click += new System.EventHandler(this.btnApriFileJsonSegreteria_Click);
             // 
-            // btnUserUploadPhoto
+            // listViewSegreteria
             // 
-            this.btnUserUploadPhoto.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnUserUploadPhoto.FlatAppearance.BorderSize = 0;
-            this.btnUserUploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserUploadPhoto.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserUploadPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnUserUploadPhoto.Location = new System.Drawing.Point(15, 114);
-            this.btnUserUploadPhoto.Name = "btnUserUploadPhoto";
-            this.btnUserUploadPhoto.Size = new System.Drawing.Size(203, 44);
-            this.btnUserUploadPhoto.TabIndex = 20;
-            this.btnUserUploadPhoto.Text = "Carica foto";
-            this.btnUserUploadPhoto.UseVisualStyleBackColor = false;
-            this.btnUserUploadPhoto.Click += new System.EventHandler(this.btnUserUploadPhoto_Click);
+            this.listViewSegreteria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.listViewSegreteria.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.listViewSegreteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewSegreteria.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.listViewSegreteria.FullRowSelect = true;
+            this.listViewSegreteria.HideSelection = false;
+            this.listViewSegreteria.Location = new System.Drawing.Point(0, 99);
+            this.listViewSegreteria.Name = "listViewSegreteria";
+            this.listViewSegreteria.Size = new System.Drawing.Size(934, 499);
+            this.listViewSegreteria.TabIndex = 11;
+            this.listViewSegreteria.UseCompatibleStateImageBehavior = false;
+            this.listViewSegreteria.View = System.Windows.Forms.View.Details;
             // 
-            // lblUserUpload
+            // columnHeader9
             // 
-            this.lblUserUpload.AutoSize = true;
-            this.lblUserUpload.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserUpload.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblUserUpload.Location = new System.Drawing.Point(8, 72);
-            this.lblUserUpload.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUserUpload.Name = "lblUserUpload";
-            this.lblUserUpload.Size = new System.Drawing.Size(119, 39);
-            this.lblUserUpload.TabIndex = 21;
-            this.lblUserUpload.Text = "Utente";
-            this.lblUserUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.columnHeader9.Text = "Cognome";
+            this.columnHeader9.Width = 300;
             // 
-            // btnDelete
+            // columnHeader10
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnDelete.Location = new System.Drawing.Point(224, 114);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(106, 44);
-            this.btnDelete.TabIndex = 22;
-            this.btnDelete.Text = "Elimina";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.columnHeader10.Text = "Nome";
+            this.columnHeader10.Width = 300;
             // 
-            // panel3
+            // columnHeader11
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel3.Location = new System.Drawing.Point(10, 170);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(923, 1);
-            this.panel3.TabIndex = 20;
+            this.columnHeader11.Text = "Telefono";
+            this.columnHeader11.Width = 300;
             // 
-            // lblModificaFile
+            // label1
             // 
-            this.lblModificaFile.AutoSize = true;
-            this.lblModificaFile.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModificaFile.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblModificaFile.Location = new System.Drawing.Point(8, 180);
-            this.lblModificaFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModificaFile.Name = "lblModificaFile";
-            this.lblModificaFile.Size = new System.Drawing.Size(299, 39);
-            this.lblModificaFile.TabIndex = 23;
-            this.lblModificaFile.Text = "Modifica file JSON";
-            this.lblModificaFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnImpostazioniAggiungiSocio
-            // 
-            this.btnImpostazioniAggiungiSocio.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnImpostazioniAggiungiSocio.FlatAppearance.BorderSize = 0;
-            this.btnImpostazioniAggiungiSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImpostazioniAggiungiSocio.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpostazioniAggiungiSocio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnImpostazioniAggiungiSocio.Location = new System.Drawing.Point(436, 231);
-            this.btnImpostazioniAggiungiSocio.Name = "btnImpostazioniAggiungiSocio";
-            this.btnImpostazioniAggiungiSocio.Size = new System.Drawing.Size(203, 44);
-            this.btnImpostazioniAggiungiSocio.TabIndex = 24;
-            this.btnImpostazioniAggiungiSocio.Text = "Aggiungi";
-            this.btnImpostazioniAggiungiSocio.UseVisualStyleBackColor = false;
-            this.btnImpostazioniAggiungiSocio.Click += new System.EventHandler(this.btnImpostazioniAggiungiSocio_Click);
-            // 
-            // btnImpostazioniEliminaSocio
-            // 
-            this.btnImpostazioniEliminaSocio.BackColor = System.Drawing.Color.Red;
-            this.btnImpostazioniEliminaSocio.FlatAppearance.BorderSize = 0;
-            this.btnImpostazioniEliminaSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImpostazioniEliminaSocio.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpostazioniEliminaSocio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnImpostazioniEliminaSocio.Location = new System.Drawing.Point(10, 613);
-            this.btnImpostazioniEliminaSocio.Name = "btnImpostazioniEliminaSocio";
-            this.btnImpostazioniEliminaSocio.Size = new System.Drawing.Size(203, 44);
-            this.btnImpostazioniEliminaSocio.TabIndex = 25;
-            this.btnImpostazioniEliminaSocio.Text = "Elimina";
-            this.btnImpostazioniEliminaSocio.UseVisualStyleBackColor = false;
-            this.btnImpostazioniEliminaSocio.Click += new System.EventHandler(this.btnImpostazioniEliminaSocio_Click);
-            // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
-            this.pictureBoxUser.Location = new System.Drawing.Point(95, 31);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(106, 96);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxUser.TabIndex = 0;
-            this.pictureBoxUser.TabStop = false;
+            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(927, 96);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Segreteria: visualizza Soci";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -521,9 +616,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.pnlSettings);
+            this.Controls.Add(this.pnlSegreteria);
             this.Controls.Add(this.pnlSoci);
-            this.Controls.Add(this.lblDebito);
+            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -531,10 +626,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banca del Tempo";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.pnlSoci.ResumeLayout(false);
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
+            this.pnlSegreteria.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -562,7 +658,7 @@
         private System.Windows.Forms.Label lblSettings;
         private System.Windows.Forms.TextBox textBoxDebito;
         private System.Windows.Forms.TextBox textBoxTelefono;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnApriFileJson2;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.TextBox textBoxCognome;
         private System.Windows.Forms.ListView listViewSettings;
@@ -578,5 +674,13 @@
         private System.Windows.Forms.Label lblUserUpload;
         private System.Windows.Forms.Button btnUserUploadPhoto;
         private System.Windows.Forms.PictureBox pictureBoxUser;
+        private System.Windows.Forms.Panel pnlSegreteria;
+        private System.Windows.Forms.Button btnApriFileJsonSegreteria;
+        private System.Windows.Forms.ListView listViewSegreteria;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Label lblHomeView;
+        private System.Windows.Forms.Label label1;
     }
 }
