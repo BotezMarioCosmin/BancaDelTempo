@@ -12,7 +12,6 @@ namespace BancaDelTempo
         private string _nome;
         private string _telefono;
         private int _debito;
-        private List<string> _prestazioniDisponibili;
 
         public string Cognome
         {
@@ -77,25 +76,12 @@ namespace BancaDelTempo
             get { return _debito; }
         }
 
-        public List<string> PrestazioniDisponibili
-        {
-            set
-            {
-                if (value != null)
-                {
-                    _prestazioniDisponibili = value;
-                }
-            }
-            get { return _prestazioniDisponibili; }
-        }
-
         public Socio()
         {
             _cognome = "Non specificato";
             _nome = "Non specificato";
             _telefono = "Non specificato";
             _debito = 0;
-            _prestazioniDisponibili = new List<string>();
         }
 
         public Socio(string cognome, string nome, string telefono, int debito)
@@ -106,14 +92,6 @@ namespace BancaDelTempo
             _debito = debito;
         }
 
-        public Socio(string cognome, string nome, string telefono, int debito, List<string> prestazioniDisponibili)
-        {
-            _cognome = cognome;
-            _nome = nome;
-            _telefono = telefono;
-            _debito = debito;
-            _prestazioniDisponibili = prestazioniDisponibili;
-        }
 
         public void CambiaTelefono(string nuovoTelefono)
         {
@@ -141,7 +119,7 @@ namespace BancaDelTempo
 
         public override string ToString()
         {
-            return string.Format("Socio:\n\tCognome: "+Cognome+"\n\tNome: "+Nome+"\n\tTelefono: "+Telefono);
+            return string.Format("Socio:\n\tCognome: "+Cognome+"\n\tNome: "+Nome+"\n\tTelefono: "+Telefono+"\n\tDebito: "+Debito);
         }
     }
 }

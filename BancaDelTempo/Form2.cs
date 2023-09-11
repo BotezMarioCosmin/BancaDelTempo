@@ -20,7 +20,7 @@ namespace BancaDelTempo
     {
         string hours_minutes = DateTime.Now.ToString("HH : mm");
         string elencoSociJsonPath = @"files\ElencoSoci.json";
-        public FormMain()
+        public FormMain(User user)
         {
             InitializeComponent();
             lblTimeLive.Text = hours_minutes;
@@ -33,8 +33,8 @@ namespace BancaDelTempo
 
             uploadUserImage();
 
-            lblUser.Text = leggiParametroUser(@"files\user.txt", 0);
-            lblDebito.Text = "Debito: " + leggiParametroUser(@"files\user.txt", 5);
+            lblUser.Text = user.Username;
+            lblDebito.Text = "Debito: " + user.Debito;
 
             aggiungiAListView();
             pnlSettings.Hide();
@@ -43,18 +43,6 @@ namespace BancaDelTempo
             pnlSoci.Location = new Point(315, 12);
             pnlSettings.Location = new Point(315, 12);
             pnlSegreteria.Location = new Point(315, 12);
-        }
-
-        public string leggiParametroUser(string filePath, int index)
-        {
-            StreamReader sr = new StreamReader(filePath);
-            List<string> listUser = new List<string>();
-            for (int i = 0; i < 6; i++)
-            {
-                listUser.Add(sr.ReadLine());
-            }
-            sr.Close();
-            return listUser[index];
         }
 
         public void aggiungiAListView()
