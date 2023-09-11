@@ -165,5 +165,12 @@ namespace BancaDelTempo
             }
             return new List<User>();
         }
+
+        private void linkLabelRegistrati_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormRegistrati f = new FormRegistrati();
+            this.Hide();
+            f.ShowDialog();
+        }
     }
 }

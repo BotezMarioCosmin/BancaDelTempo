@@ -43,6 +43,19 @@ namespace BancaDelTempo
             pnlSoci.Location = new Point(315, 12);
             pnlSettings.Location = new Point(315, 12);
             pnlSegreteria.Location = new Point(315, 12);
+
+            if (!user.Admin)
+            {
+                listViewSettings.Hide();
+                btnImpostazioniEliminaSocio.Hide();
+                btnApriFileJson2.Hide();
+                btnImpostazioniAggiungiSocio.Hide();
+                lblModificaFile.Hide();
+                textBoxCognome.Hide();
+                textBoxNome.Hide();
+                textBoxTelefono.Hide();
+                textBoxDebito.Hide();
+            }
         }
 
         public void aggiungiAListView()

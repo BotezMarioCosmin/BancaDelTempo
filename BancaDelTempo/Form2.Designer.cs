@@ -31,15 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnPrestazioni = new System.Windows.Forms.Button();
             this.btnSegreteria = new System.Windows.Forms.Button();
             this.lblDebito = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.lblTimeLive = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.timerTimeLive = new System.Windows.Forms.Timer(this.components);
             this.pnlSoci = new System.Windows.Forms.Panel();
             this.lblHomeView = new System.Windows.Forms.Label();
@@ -76,11 +73,14 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.pnlSoci.SuspendLayout();
             this.pnlSettings.SuspendLayout();
             this.pnlSegreteria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,20 +99,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(302, 686);
             this.panel1.TabIndex = 2;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BackgroundImage = global::BancaDelTempo.Properties.Resources.settings;
-            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Location = new System.Drawing.Point(221, 58);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(50, 50);
-            this.btnSettings.TabIndex = 16;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnPrestazioni
             // 
@@ -196,30 +182,6 @@
             this.lblUser.TabIndex = 12;
             this.lblUser.Text = "User";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackgroundImage = global::BancaDelTempo.Properties.Resources.logout;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(26, 58);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(50, 50);
-            this.btnLogout.TabIndex = 4;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
-            this.pictureBoxUser.Location = new System.Drawing.Point(95, 31);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(106, 96);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxUser.TabIndex = 0;
-            this.pictureBoxUser.TabStop = false;
             // 
             // timerTimeLive
             // 
@@ -319,7 +281,7 @@
             this.pnlSettings.Controls.Add(this.textBoxNome);
             this.pnlSettings.Controls.Add(this.textBoxCognome);
             this.pnlSettings.Controls.Add(this.listViewSettings);
-            this.pnlSettings.Location = new System.Drawing.Point(878, 212);
+            this.pnlSettings.Location = new System.Drawing.Point(337, 31);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(944, 657);
             this.pnlSettings.TabIndex = 19;
@@ -545,7 +507,7 @@
             this.pnlSegreteria.Controls.Add(this.label1);
             this.pnlSegreteria.Controls.Add(this.btnApriFileJsonSegreteria);
             this.pnlSegreteria.Controls.Add(this.listViewSegreteria);
-            this.pnlSegreteria.Location = new System.Drawing.Point(318, 21);
+            this.pnlSegreteria.Location = new System.Drawing.Point(352, 425);
             this.pnlSegreteria.Name = "pnlSegreteria";
             this.pnlSegreteria.Size = new System.Drawing.Size(934, 648);
             this.pnlSegreteria.TabIndex = 17;
@@ -610,15 +572,53 @@
             this.label1.Text = "Segreteria: visualizza Soci";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSettings
+            // 
+            this.btnSettings.BackgroundImage = global::BancaDelTempo.Properties.Resources.settings;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Location = new System.Drawing.Point(221, 58);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(50, 50);
+            this.btnSettings.TabIndex = 16;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackgroundImage = global::BancaDelTempo.Properties.Resources.logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(26, 58);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 50);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
+            this.pictureBoxUser.Location = new System.Drawing.Point(95, 31);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(106, 96);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUser.TabIndex = 0;
+            this.pictureBoxUser.TabStop = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.pnlSegreteria);
             this.Controls.Add(this.pnlSoci);
-            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -626,11 +626,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banca del Tempo";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.pnlSoci.ResumeLayout(false);
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
             this.pnlSegreteria.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
 
         }
