@@ -1,0 +1,16 @@
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\bin\Debug\BancaDelTempo.exe.config
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\bin\Debug\BancaDelTempo.exe
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\bin\Debug\BancaDelTempo.pdb
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.csproj.AssemblyReference.cache
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.csproj.SuggestedBindingRedirects.cache
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.FormLogin.resources
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.FormMain.resources
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.FormRegistrati.resources
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.Properties.Resources.resources
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.csproj.GenerateResource.cache
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.csproj.CoreCompileInputs.cache
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.csproj.CopyComplete
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.exe
+C:\Users\botez\source\repos\BancaDelTempo\BancaDelTempo\obj\Debug\BancaDelTempo.pdb

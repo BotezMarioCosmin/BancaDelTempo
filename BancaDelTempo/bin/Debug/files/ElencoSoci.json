@@ -1,0 +1,50 @@
+[
+  {
+    "Cognome": "Burecchi",
+    "Nome": "Alfonso",
+    "Telefono": "3879823897",
+    "Debito": 43
+  },
+  {
+    "Cognome": "Sarpini",
+    "Nome": "Carlo",
+    "Telefono": "3858372639",
+    "Debito": 124
+  },
+  {
+    "Cognome": "Mantello",
+    "Nome": "Giada",
+    "Telefono": "3821621827",
+    "Debito": 20
+  },
+  {
+    "Cognome": "Persini",
+    "Nome": "Paolo",
+    "Telefono": "3892328392",
+    "Debito": 0
+  },
+  {
+    "Cognome": "Lennaro",
+    "Nome": "Samuele",
+    "Telefono": "3812182795",
+    "Debito": 210
+  },
+  {
+    "Cognome": "Benovelli",
+    "Nome": "Greta",
+    "Telefono": "3872376725",
+    "Debito": 0
+  },
+  {
+    "Cognome": "Mantovani",
+    "Nome": "Giorgio",
+    "Telefono": "3829827281",
+    "Debito": 65
+  },
+  {
+    "Cognome": "Bianchi",
+    "Nome": "Ludovica",
+    "Telefono": "3816723452",
+    "Debito": 32
+  }
+]

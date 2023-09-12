@@ -1,0 +1,20 @@
+[
+  {
+    "Username": "mario",
+    "Password": "2005",
+    "Admin": true,
+    "Cognome": "Botez",
+    "Nome": "Mario Cosmin",
+    "Telefono": "3858372639",
+    "Debito": 30
+  },
+  {
+    "Username": "admin",
+    "Password": "admin",
+    "Admin": true,
+    "Cognome": "admin",
+    "Nome": "admin",
+    "Telefono": "nnnnnnnnnn",
+    "Debito": 0
+  }
+]
