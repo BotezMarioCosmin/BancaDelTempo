@@ -254,7 +254,7 @@
             this.MaximizeBox = false;
             this.Name = "FormRegistrati";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Banca del Tempo";
+            this.Text = "Banca del Tempo > Registrati";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBank)).EndInit();
             this.ResumeLayout(false);

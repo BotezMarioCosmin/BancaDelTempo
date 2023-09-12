@@ -31,12 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.btnPrestazioni = new System.Windows.Forms.Button();
             this.btnSegreteria = new System.Windows.Forms.Button();
             this.lblDebito = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.lblTimeLive = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.timerTimeLive = new System.Windows.Forms.Timer(this.components);
             this.pnlSoci = new System.Windows.Forms.Panel();
             this.lblHomeView = new System.Windows.Forms.Label();
@@ -67,20 +70,32 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlSegreteria = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnApriFileJsonSegreteria = new System.Windows.Forms.Button();
             this.listViewSegreteria = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.pnlPrestazioni = new System.Windows.Forms.Panel();
+            this.btnOffriPrestazione = new System.Windows.Forms.Button();
+            this.lblPrestazioni = new System.Windows.Forms.Label();
+            this.btnApriFileJson3 = new System.Windows.Forms.Button();
+            this.listViewPrestazioni = new System.Windows.Forms.ListView();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBoxOre = new System.Windows.Forms.ComboBox();
+            this.comboBoxPrestazione = new System.Windows.Forms.ComboBox();
+            this.comboBoxBeneficiario = new System.Windows.Forms.ComboBox();
+            this.comboBoxData = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.pnlSoci.SuspendLayout();
             this.pnlSettings.SuspendLayout();
             this.pnlSegreteria.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
+            this.pnlPrestazioni.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,6 +115,20 @@
             this.panel1.Size = new System.Drawing.Size(302, 686);
             this.panel1.TabIndex = 2;
             // 
+            // btnSettings
+            // 
+            this.btnSettings.BackgroundImage = global::BancaDelTempo.Properties.Resources.settings;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Location = new System.Drawing.Point(221, 58);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(50, 50);
+            this.btnSettings.TabIndex = 16;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
             // btnPrestazioni
             // 
             this.btnPrestazioni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(61)))), ((int)(((byte)(100)))));
@@ -114,6 +143,7 @@
             this.btnPrestazioni.TabIndex = 15;
             this.btnPrestazioni.Text = "Prestazioni";
             this.btnPrestazioni.UseVisualStyleBackColor = false;
+            this.btnPrestazioni.Click += new System.EventHandler(this.btnPrestazioni_Click);
             // 
             // btnSegreteria
             // 
@@ -183,6 +213,30 @@
             this.lblUser.Text = "User";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackgroundImage = global::BancaDelTempo.Properties.Resources.logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(26, 58);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 50);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
+            this.pictureBoxUser.Location = new System.Drawing.Point(95, 31);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(106, 96);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUser.TabIndex = 0;
+            this.pictureBoxUser.TabStop = false;
+            // 
             // timerTimeLive
             // 
             this.timerTimeLive.Interval = 1000;
@@ -193,7 +247,7 @@
             this.pnlSoci.Controls.Add(this.lblHomeView);
             this.pnlSoci.Controls.Add(this.btnApriFileJSON);
             this.pnlSoci.Controls.Add(this.listViewElencoSoci);
-            this.pnlSoci.Location = new System.Drawing.Point(775, 326);
+            this.pnlSoci.Location = new System.Drawing.Point(914, 277);
             this.pnlSoci.Name = "pnlSoci";
             this.pnlSoci.Size = new System.Drawing.Size(934, 648);
             this.pnlSoci.TabIndex = 12;
@@ -261,7 +315,7 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Debito (min)";
+            this.columnHeader4.Text = "Debito (ore)";
             this.columnHeader4.Width = 200;
             // 
             // pnlSettings
@@ -281,7 +335,7 @@
             this.pnlSettings.Controls.Add(this.textBoxNome);
             this.pnlSettings.Controls.Add(this.textBoxCognome);
             this.pnlSettings.Controls.Add(this.listViewSettings);
-            this.pnlSettings.Location = new System.Drawing.Point(337, 31);
+            this.pnlSettings.Location = new System.Drawing.Point(602, 379);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(944, 657);
             this.pnlSettings.TabIndex = 19;
@@ -507,10 +561,22 @@
             this.pnlSegreteria.Controls.Add(this.label1);
             this.pnlSegreteria.Controls.Add(this.btnApriFileJsonSegreteria);
             this.pnlSegreteria.Controls.Add(this.listViewSegreteria);
-            this.pnlSegreteria.Location = new System.Drawing.Point(352, 425);
+            this.pnlSegreteria.Location = new System.Drawing.Point(401, 460);
             this.pnlSegreteria.Name = "pnlSegreteria";
             this.pnlSegreteria.Size = new System.Drawing.Size(934, 648);
             this.pnlSegreteria.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(927, 96);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Segreteria: visualizza Soci";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnApriFileJsonSegreteria
             // 
@@ -560,55 +626,170 @@
             this.columnHeader11.Text = "Telefono";
             this.columnHeader11.Width = 300;
             // 
-            // label1
+            // pnlPrestazioni
             // 
-            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(2, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(927, 96);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Segreteria: visualizza Soci";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlPrestazioni.Controls.Add(this.comboBoxData);
+            this.pnlPrestazioni.Controls.Add(this.comboBoxBeneficiario);
+            this.pnlPrestazioni.Controls.Add(this.comboBoxPrestazione);
+            this.pnlPrestazioni.Controls.Add(this.comboBoxOre);
+            this.pnlPrestazioni.Controls.Add(this.btnOffriPrestazione);
+            this.pnlPrestazioni.Controls.Add(this.lblPrestazioni);
+            this.pnlPrestazioni.Controls.Add(this.btnApriFileJson3);
+            this.pnlPrestazioni.Controls.Add(this.listViewPrestazioni);
+            this.pnlPrestazioni.Location = new System.Drawing.Point(318, 30);
+            this.pnlPrestazioni.Name = "pnlPrestazioni";
+            this.pnlPrestazioni.Size = new System.Drawing.Size(934, 648);
+            this.pnlPrestazioni.TabIndex = 20;
             // 
-            // btnSettings
+            // btnOffriPrestazione
             // 
-            this.btnSettings.BackgroundImage = global::BancaDelTempo.Properties.Resources.settings;
-            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Location = new System.Drawing.Point(221, 58);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(50, 50);
-            this.btnSettings.TabIndex = 16;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnOffriPrestazione.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnOffriPrestazione.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOffriPrestazione.FlatAppearance.BorderSize = 0;
+            this.btnOffriPrestazione.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOffriPrestazione.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOffriPrestazione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnOffriPrestazione.Location = new System.Drawing.Point(715, 123);
+            this.btnOffriPrestazione.Name = "btnOffriPrestazione";
+            this.btnOffriPrestazione.Size = new System.Drawing.Size(208, 44);
+            this.btnOffriPrestazione.TabIndex = 20;
+            this.btnOffriPrestazione.Text = "Offri Prestazione";
+            this.btnOffriPrestazione.UseVisualStyleBackColor = false;
+            this.btnOffriPrestazione.Click += new System.EventHandler(this.btnOffriPrestazione_Click);
             // 
-            // btnLogout
+            // lblPrestazioni
             // 
-            this.btnLogout.BackgroundImage = global::BancaDelTempo.Properties.Resources.logout;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(26, 58);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(50, 50);
-            this.btnLogout.TabIndex = 4;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.lblPrestazioni.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrestazioni.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblPrestazioni.Location = new System.Drawing.Point(2, 0);
+            this.lblPrestazioni.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrestazioni.Name = "lblPrestazioni";
+            this.lblPrestazioni.Size = new System.Drawing.Size(927, 96);
+            this.lblPrestazioni.TabIndex = 18;
+            this.lblPrestazioni.Text = "Prestazioni";
+            this.lblPrestazioni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBoxUser
+            // btnApriFileJson3
             // 
-            this.pictureBoxUser.Image = global::BancaDelTempo.Properties.Resources.user;
-            this.pictureBoxUser.Location = new System.Drawing.Point(95, 31);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(106, 96);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxUser.TabIndex = 0;
-            this.pictureBoxUser.TabStop = false;
+            this.btnApriFileJson3.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnApriFileJson3.FlatAppearance.BorderSize = 0;
+            this.btnApriFileJson3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApriFileJson3.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApriFileJson3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnApriFileJson3.Location = new System.Drawing.Point(726, 604);
+            this.btnApriFileJson3.Name = "btnApriFileJson3";
+            this.btnApriFileJson3.Size = new System.Drawing.Size(208, 44);
+            this.btnApriFileJson3.TabIndex = 16;
+            this.btnApriFileJson3.Text = "Apri file JSON";
+            this.btnApriFileJson3.UseVisualStyleBackColor = false;
+            this.btnApriFileJson3.Click += new System.EventHandler(this.btnApriFileJson3_Click);
+            // 
+            // listViewPrestazioni
+            // 
+            this.listViewPrestazioni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.listViewPrestazioni.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19});
+            this.listViewPrestazioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewPrestazioni.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.listViewPrestazioni.FullRowSelect = true;
+            this.listViewPrestazioni.HideSelection = false;
+            this.listViewPrestazioni.Location = new System.Drawing.Point(0, 197);
+            this.listViewPrestazioni.Name = "listViewPrestazioni";
+            this.listViewPrestazioni.Size = new System.Drawing.Size(934, 401);
+            this.listViewPrestazioni.TabIndex = 11;
+            this.listViewPrestazioni.UseCompatibleStateImageBehavior = false;
+            this.listViewPrestazioni.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Ore";
+            this.columnHeader15.Width = 100;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Prestazione";
+            this.columnHeader16.Width = 150;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Data";
+            this.columnHeader17.Width = 200;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Prestante";
+            this.columnHeader18.Width = 250;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Beneficiario";
+            this.columnHeader19.Width = 250;
+            // 
+            // comboBoxOre
+            // 
+            this.comboBoxOre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.comboBoxOre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxOre.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.comboBoxOre.FormattingEnabled = true;
+            this.comboBoxOre.Items.AddRange(new object[] {
+            "Ore",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.comboBoxOre.Location = new System.Drawing.Point(3, 113);
+            this.comboBoxOre.Name = "comboBoxOre";
+            this.comboBoxOre.Size = new System.Drawing.Size(315, 28);
+            this.comboBoxOre.TabIndex = 21;
+            this.comboBoxOre.DropDown += new System.EventHandler(this.comboBoxOre_DropDown);
+            // 
+            // comboBoxPrestazione
+            // 
+            this.comboBoxPrestazione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.comboBoxPrestazione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPrestazione.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPrestazione.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.comboBoxPrestazione.FormattingEnabled = true;
+            this.comboBoxPrestazione.Location = new System.Drawing.Point(3, 158);
+            this.comboBoxPrestazione.Name = "comboBoxPrestazione";
+            this.comboBoxPrestazione.Size = new System.Drawing.Size(315, 28);
+            this.comboBoxPrestazione.TabIndex = 22;
+            this.comboBoxPrestazione.DropDown += new System.EventHandler(this.comboBoxPrestazione_DropDown);
+            // 
+            // comboBoxBeneficiario
+            // 
+            this.comboBoxBeneficiario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.comboBoxBeneficiario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBeneficiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBeneficiario.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.comboBoxBeneficiario.FormattingEnabled = true;
+            this.comboBoxBeneficiario.Location = new System.Drawing.Point(371, 158);
+            this.comboBoxBeneficiario.Name = "comboBoxBeneficiario";
+            this.comboBoxBeneficiario.Size = new System.Drawing.Size(315, 28);
+            this.comboBoxBeneficiario.TabIndex = 23;
+            this.comboBoxBeneficiario.DropDown += new System.EventHandler(this.comboBoxBeneficiario_DropDown);
+            // 
+            // comboBoxData
+            // 
+            this.comboBoxData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.comboBoxData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxData.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.comboBoxData.FormattingEnabled = true;
+            this.comboBoxData.Location = new System.Drawing.Point(371, 113);
+            this.comboBoxData.Name = "comboBoxData";
+            this.comboBoxData.Size = new System.Drawing.Size(315, 28);
+            this.comboBoxData.TabIndex = 24;
             // 
             // FormMain
             // 
@@ -616,6 +797,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pnlPrestazioni);
             this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.pnlSegreteria);
             this.Controls.Add(this.pnlSoci);
@@ -626,11 +808,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banca del Tempo";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.pnlSoci.ResumeLayout(false);
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
             this.pnlSegreteria.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
+            this.pnlPrestazioni.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -682,5 +865,19 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.Label lblHomeView;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlPrestazioni;
+        private System.Windows.Forms.Label lblPrestazioni;
+        private System.Windows.Forms.Button btnApriFileJson3;
+        private System.Windows.Forms.ListView listViewPrestazioni;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.Button btnOffriPrestazione;
+        private System.Windows.Forms.ComboBox comboBoxData;
+        private System.Windows.Forms.ComboBox comboBoxBeneficiario;
+        private System.Windows.Forms.ComboBox comboBoxPrestazione;
+        private System.Windows.Forms.ComboBox comboBoxOre;
     }
 }

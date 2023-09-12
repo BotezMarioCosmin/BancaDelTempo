@@ -26,10 +26,6 @@ namespace BancaDelTempo
             InitializeComponent();
             lblTimeLive.Text = hours_minutes;
             timerTimeLive.Start();
-            //////////////////////////////////
-            //this.Hide();
-            //FormMain f = new FormMain();
-            //f.ShowDialog();
         }
 
         private void timerTimeLive_Tick(object sender, EventArgs e)

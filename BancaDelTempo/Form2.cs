@@ -20,11 +20,16 @@ namespace BancaDelTempo
     {
         string hours_minutes = DateTime.Now.ToString("HH : mm");
         string elencoSociJsonPath = @"files\ElencoSoci.json";
+        DateTime date = DateTime.Now;
+        List<string> prestazioni = new List<string>();
+        List<string> beneficiari = new List<string>();
+        User utente = null;
         public FormMain(User user)
         {
             InitializeComponent();
             lblTimeLive.Text = hours_minutes;
             timerTimeLive.Start();
+            utente = user;
 
             GraphicsPath p = new GraphicsPath();
             p.AddEllipse(1, 1, btnLogout.Width - 4, btnLogout.Height - 4);
@@ -39,10 +44,16 @@ namespace BancaDelTempo
             aggiungiAListView();
             pnlSettings.Hide();
             pnlSegreteria.Hide();
+            pnlPrestazioni.Hide();
 
             pnlSoci.Location = new Point(315, 12);
             pnlSettings.Location = new Point(315, 12);
             pnlSegreteria.Location = new Point(315, 12);
+            pnlPrestazioni.Location = new Point(315, 12);
+
+            comboBoxData.Items.Add(date.ToString());
+            comboBoxData.SelectedIndex = 0;
+            comboBoxData.Enabled= false;
 
             if (!user.Admin)
             {
@@ -56,6 +67,40 @@ namespace BancaDelTempo
                 textBoxTelefono.Hide();
                 textBoxDebito.Hide();
             }
+
+            prestazioni.Add("Riparazione");
+            prestazioni.Add("Lezione");
+            prestazioni.Add("Baby Sitter");
+            prestazioni.Add("Taglio erba");
+            prestazioni.Add("Pitturare casa");
+            prestazioni.Add("Torta");
+            prestazioni.Add("Pulizia");
+            prestazioni.Add("Fotografia");
+            prestazioni.Add("Personal Training");
+            prestazioni.Add("Traduzione");
+            prestazioni.Add("Guida Turistica");
+            for (int i = 0; i < prestazioni.Count(); i++)
+            {
+                comboBoxPrestazione.Items.Add(prestazioni[i]);
+            }
+
+            beneficiari = getBeneficiari();
+            for (int i = 0; i < beneficiari.Count(); i++)
+            {
+                comboBoxBeneficiario.Items.Add(beneficiari[i]);
+            }
+        }
+
+        public List<String> getBeneficiari()
+        {
+            List<Socio> ls = leggiFileJson(elencoSociJsonPath);
+            List<String> beneficiari = new List<String>();
+            foreach (var v in ls)
+            {
+                string tmp = v.Cognome+" "+v.Nome;
+                beneficiari.Add(tmp);
+            }
+            return beneficiari;
         }
 
         public void aggiungiAListView()
@@ -131,6 +176,7 @@ namespace BancaDelTempo
             }
         }
 
+
         public List<Socio> leggiFileJson(string jsonFilePath)
         {
             if (File.Exists(jsonFilePath))
@@ -175,6 +221,7 @@ namespace BancaDelTempo
             pnlSoci.Hide();
             pnlSettings.Show();
             pnlSegreteria.Hide();
+            pnlPrestazioni.Hide();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -184,6 +231,7 @@ namespace BancaDelTempo
             pnlSettings.Hide();
             pnlSoci.Show();
             pnlSegreteria.Hide();
+            pnlPrestazioni.Hide();  
         }
 
         private void btnImpostazioniEliminaSocio_Click(object sender, EventArgs e)
@@ -351,11 +399,54 @@ namespace BancaDelTempo
 
         private void btnApriFileJson2_Click(object sender, EventArgs e)
         {
+            btnApriFileJSON_Click(sender, e);
+        }
+
+        private void btnSegreteria_Click(object sender, EventArgs e)
+        {
+            pnlPrestazioni.Hide();
+            pnlSoci.Hide();
+            pnlSettings.Hide();
+            pnlSegreteria.Show();
+            listViewSegreteria.Items.Clear();
+
+            aggiungiAListView();
+        }
+
+        private void btnApriFileJsonSegreteria_Click(object sender, EventArgs e)
+        {
+            btnApriFileJSON_Click(sender, e);
+        }
+
+        private void btnPrestazioni_Click(object sender, EventArgs e)
+        {
+            comboBoxPrestazione.Items.Add("Prestazioni");
+            comboBoxOre.Items.Add("Ore");
+            comboBoxBeneficiario.Items.Add("Beneficiario");
+
+            List<User> utenti = leggiFileJsonUser();
+            utenti = modificaDebitoUtente(utenti, utente);
+            refreshJsonFileUtente(utenti, @"files\Users.json");
+
+            listViewPrestazioni.Items.Clear();
+            aggiungiAListViewPrestazioni();
+            pnlSegreteria.Hide();
+            pnlSettings.Hide();
+            pnlSoci.Hide();
+            pnlPrestazioni.Show();
+            comboBoxPrestazione.SelectedItem = "Prestazioni";
+            comboBoxOre.SelectedItem = "Ore";
+            comboBoxBeneficiario.SelectedItem = "Beneficiario";
+
+        }
+
+        private void btnApriFileJson3_Click(object sender, EventArgs e)
+        {
             try
             {
                 //path del file
                 string exeFolder = Application.StartupPath;
-                string filePath = System.IO.Path.Combine(exeFolder, elencoSociJsonPath);
+                string filePath = System.IO.Path.Combine(exeFolder, @"files\Prestazioni.json");
 
                 //verifica dell'esistenza del file
                 if (System.IO.File.Exists(filePath))
@@ -374,18 +465,166 @@ namespace BancaDelTempo
             }
         }
 
-        private void btnSegreteria_Click(object sender, EventArgs e)
+        public List<Prestazione> leggiFileJsonPrestazioni(string jsonFilePath)
         {
-            pnlSoci.Hide();
-            pnlSegreteria.Show();
-            listViewSegreteria.Items.Clear();
+            if (File.Exists(jsonFilePath))
+            {
+                try
+                {
+                    string jsonText = File.ReadAllText(jsonFilePath);
+                    List<Prestazione> prestazioni = JsonConvert.DeserializeObject<List<Prestazione>>(jsonText);
 
-            aggiungiAListView();
+                    return prestazioni;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                File.WriteAllText(jsonFilePath,"[]");
+            }
+            return new List<Prestazione>();
+        }
+        public void aggiungiAListViewPrestazioni()
+        {
+            List<Prestazione> listPrestazioni = leggiFileJsonPrestazioni(@"files\Prestazioni.json");
+
+            foreach (var s in listPrestazioni)
+            {
+                ListViewItem item = new ListViewItem(s.Ore.ToString());
+                item.SubItems.Add(s.NomePrestazione);
+                item.SubItems.Add(s.Data.ToString());
+                item.SubItems.Add(s.Prestante);
+                item.SubItems.Add(s.Beneficiario);
+                listViewPrestazioni.Items.Add(item);
+            }
+            listPrestazioni = leggiFileJsonPrestazioni(@"files\Prestazioni.json");
         }
 
-        private void btnApriFileJsonSegreteria_Click(object sender, EventArgs e)
+        private void btnOffriPrestazione_Click(object sender, EventArgs e)
         {
-            btnApriFileJSON_Click(sender, e);
+            MessageBox.Show("Prestazione offerta con successo!");
+            utente.SottraiDebito(Convert.ToInt32(comboBoxOre.SelectedItem));
+            lblDebito.Text = "Debito: "+ utente.Debito.ToString();
+
+            List<User> utenti = leggiFileJsonUser();
+            utenti = modificaDebitoUtente(utenti, utente);
+            refreshJsonFileUtente(utenti, @"files\Users.json");
+
+
+            Prestazione p = new Prestazione(Convert.ToInt32(comboBoxOre.Text), comboBoxPrestazione.Text, Convert.ToDateTime(comboBoxData.Text),
+                utente.Cognome+" "+utente.Nome,comboBoxBeneficiario.Text);
+            List<Prestazione> lp = leggiFileJsonPrestazioni(@"files\Prestazioni.json");
+            aggiungiPrestazioneJson(p);
+
+            listViewPrestazioni.Items.Clear();
+            aggiungiAListViewPrestazioni();
+
+
+            comboBoxPrestazione.Items.Add("Prestazioni");
+            comboBoxOre.Items.Add("Ore");
+            comboBoxBeneficiario.Items.Add("Beneficiario");
+            comboBoxPrestazione.SelectedItem = "Prestazione";
+            comboBoxOre.SelectedItem = "Ore";
+            comboBoxBeneficiario.SelectedItem = "Beneficiario";
+        }
+
+            private void comboBoxPrestazione_DropDown(object sender, EventArgs e)
+        {
+            if (comboBoxPrestazione.Items.Contains("Prestazioni"))
+            {
+                comboBoxPrestazione.Items.Remove("Prestazioni");
+            }
+        }
+
+        private void comboBoxOre_DropDown(object sender, EventArgs e)
+        {
+            if (comboBoxOre.Items.Contains("Ore"))
+            {
+                comboBoxOre.Items.Remove("Ore");
+            }
+        }
+
+        private void comboBoxBeneficiario_DropDown(object sender, EventArgs e)
+        {
+            if (comboBoxBeneficiario.Items.Contains("Beneficiario"))
+            {
+                comboBoxBeneficiario.Items.Remove("Beneficiario");
+            }
+        }
+        public List<User> leggiFileJsonUser()
+        {
+            if (File.Exists(@"files\Users.json"))
+            {
+                try
+                {
+                    string jsonText = File.ReadAllText(@"files\Users.json");
+                    List<User> user = JsonConvert.DeserializeObject<List<User>>(jsonText);
+                    return user;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                File.WriteAllText(@"files\Users.json", "[]");
+            }
+            return new List<User>();
+        }
+        public void refreshJsonFileUtente(List<User> ls, string path)
+        {
+            string nuovoJsonText = JsonConvert.SerializeObject(ls, Formatting.Indented);
+            File.WriteAllText(path, nuovoJsonText);
+        }
+
+        public List<User> modificaDebitoUtente(List<User> utenti, User utente)
+        {
+            for (int i = 0; i < utenti.Count(); i++)
+            {
+                if (utenti[i].Telefono == utente.Telefono)
+                {
+                    utenti[i].Debito = utente.Debito;
+                }
+            }
+            return utenti;
+        }
+
+        public List<Prestazione> leggiPrestazioni()
+        {
+            if (File.Exists(@"files\Prestazioni.json"))
+            {
+                try
+                {
+                    string jsonText = File.ReadAllText(@"files\Prestazioni.json");
+                    List<Prestazione> prestazioni = JsonConvert.DeserializeObject<List<Prestazione>>(jsonText);
+                    return prestazioni;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                File.WriteAllText(@"files\Prestazioni.json", "[]");
+            }
+            return new List<Prestazione>();
+        }
+        public void aggiungiPrestazioneJson(Prestazione pr)
+        {
+            List<Prestazione> lp = leggiPrestazioni();
+            lp.Add(pr);
+            string nuovoJsonText = JsonConvert.SerializeObject(lp, Formatting.Indented);
+            File.WriteAllText(@"files\Prestazioni.json", nuovoJsonText);
+        }
+        public void refreshJsonFilePrestazioni(List<Prestazione> lp)
+        {
+            string nuovoJsonText = JsonConvert.SerializeObject(lp, Formatting.Indented);
+            File.WriteAllText(@"files\Prestazioni.json", nuovoJsonText);
         }
     }
 

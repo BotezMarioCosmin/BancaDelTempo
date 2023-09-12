@@ -40,7 +40,7 @@ namespace BancaDelTempo
 
         public override string ToString()
         {
-            return string.Format("Socio:\n\tCognome: " + Cognome + "\n\tNome: " + Nome + "\n\tTelefono: " + Telefono + "\n\tDebito: " + Debito);
+            return string.Format("Username: "+Username+"\n\tPassword :"+Password+"\n\tAdmin: "+Admin+"\n\tSocio:\n\tCognome: " + Cognome + "\n\tNome: " + Nome + "\n\tTelefono: " + Telefono + "\n\tDebito: " + Debito);
         }
     }
 }
