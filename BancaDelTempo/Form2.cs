@@ -505,30 +505,39 @@ namespace BancaDelTempo
 
         private void btnOffriPrestazione_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Prestazione offerta con successo!");
-            utente.SottraiDebito(Convert.ToInt32(comboBoxOre.SelectedItem));
-            lblDebito.Text = "Debito: "+ utente.Debito.ToString();
+            if (comboBoxOre.Text != "Ore" && comboBoxBeneficiario.Text != "Beneficiario"
+                && comboBoxPrestazione.Text != "Prestazione")
+            {
+                MessageBox.Show("Prestazione offerta con successo!");
+                utente.SottraiDebito(Convert.ToInt32(comboBoxOre.SelectedItem));
+                lblDebito.Text = "Debito: " + utente.Debito.ToString();
 
-            List<User> utenti = leggiFileJsonUser();
-            utenti = modificaDebitoUtente(utenti, utente);
-            refreshJsonFileUtente(utenti, @"files\Users.json");
-
-
-            Prestazione p = new Prestazione(Convert.ToInt32(comboBoxOre.Text), comboBoxPrestazione.Text, Convert.ToDateTime(comboBoxData.Text),
-                utente.Cognome+" "+utente.Nome,comboBoxBeneficiario.Text);
-            List<Prestazione> lp = leggiFileJsonPrestazioni(@"files\Prestazioni.json");
-            aggiungiPrestazioneJson(p);
-
-            listViewPrestazioni.Items.Clear();
-            aggiungiAListViewPrestazioni();
+                List<User> utenti = leggiFileJsonUser();
+                utenti = modificaDebitoUtente(utenti, utente);
+                refreshJsonFileUtente(utenti, @"files\Users.json");
 
 
-            comboBoxPrestazione.Items.Add("Prestazioni");
-            comboBoxOre.Items.Add("Ore");
-            comboBoxBeneficiario.Items.Add("Beneficiario");
-            comboBoxPrestazione.SelectedItem = "Prestazione";
-            comboBoxOre.SelectedItem = "Ore";
-            comboBoxBeneficiario.SelectedItem = "Beneficiario";
+                Prestazione p = new Prestazione(Convert.ToInt32(comboBoxOre.Text), comboBoxPrestazione.Text, Convert.ToDateTime(comboBoxData.Text),
+                    utente.Cognome + " " + utente.Nome, comboBoxBeneficiario.Text);
+                List<Prestazione> lp = leggiFileJsonPrestazioni(@"files\Prestazioni.json");
+                aggiungiPrestazioneJson(p);
+
+                listViewPrestazioni.Items.Clear();
+                aggiungiAListViewPrestazioni();
+
+
+                comboBoxPrestazione.Items.Add("Prestazioni");
+                comboBoxOre.Items.Add("Ore");
+                comboBoxBeneficiario.Items.Add("Beneficiario");
+                comboBoxPrestazione.SelectedItem = "Prestazione";
+                comboBoxOre.SelectedItem = "Ore";
+                comboBoxBeneficiario.SelectedItem = "Beneficiario";
+            }
+            else
+            {
+                MessageBox.Show("Valori non validi","Errore");
+            }
+
         }
 
             private void comboBoxPrestazione_DropDown(object sender, EventArgs e)

@@ -33,5 +33,19 @@
     "Data": "2023-09-12T02:35:02",
     "Prestante": "Botez Mario Cosmin",
     "Beneficiario": "Mantello Giada"
+  },
+  {
+    "Ore": 4,
+    "NomePrestazione": "Pitturare casa",
+    "Data": "2023-09-13T10:24:26",
+    "Prestante": "Botez Mario Cosmin",
+    "Beneficiario": "Mantello Giada"
+  },
+  {
+    "Ore": 10,
+    "NomePrestazione": "Taglio erba",
+    "Data": "2023-09-13T10:26:49",
+    "Prestante": "rossi diego",
+    "Beneficiario": "Persini Paolo"
   }
 ]

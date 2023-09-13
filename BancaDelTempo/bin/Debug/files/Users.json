@@ -6,7 +6,7 @@
     "Cognome": "Botez",
     "Nome": "Mario Cosmin",
     "Telefono": "3858372639",
-    "Debito": 30
+    "Debito": 26
   },
   {
     "Username": "admin",
@@ -15,6 +15,24 @@
     "Cognome": "admin",
     "Nome": "admin",
     "Telefono": "nnnnnnnnnn",
+    "Debito": 0
+  },
+  {
+    "Username": "Konka",
+    "Password": "oiuyoiuy7",
+    "Admin": false,
+    "Cognome": "Vita",
+    "Nome": "Thomas",
+    "Telefono": "5555555555",
+    "Debito": 0
+  },
+  {
+    "Username": "miao",
+    "Password": "winx",
+    "Admin": false,
+    "Cognome": "rossi",
+    "Nome": "diego",
+    "Telefono": "4",
     "Debito": 0
   }
 ]
