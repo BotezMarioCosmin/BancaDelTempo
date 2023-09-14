@@ -53,7 +53,7 @@ namespace BancaDelTempo
             {
                 try
                 {
-                    User user = new User(textBoxCognome.Text, textBoxNome.Text, textBoxTelefono.Text, 0, textBoxUsername.Text, textBoxPassword.Text, false);
+                    User user = new User(textBoxCognome.Text, textBoxNome.Text, textBoxTelefono.Text, 0, textBoxZona.Text, textBoxUsername.Text, textBoxPassword.Text, false);
                     aggiungiUserJson(jsonFilePath, user);
                     textBoxUsername.Text = "Username";
                     textBoxPassword.Text = "Password";
@@ -173,8 +173,9 @@ namespace BancaDelTempo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnRegistrati_Click(sender, e);
+                textBoxTelefono.Select();
             }
+
         }
         public void refreshJsonFile(List<User> ls, string path)
         {
@@ -208,6 +209,19 @@ namespace BancaDelTempo
                 File.WriteAllText(jsonFilePath, "[]");
             }
             return new List<User>();
+        }
+
+        private void textBoxZona_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegistrati_Click(sender, e);
+            }
+        }
+
+        private void textBoxZona_Click(object sender, EventArgs e)
+        {
+            textBoxZona.Clear();
         }
     }
 }

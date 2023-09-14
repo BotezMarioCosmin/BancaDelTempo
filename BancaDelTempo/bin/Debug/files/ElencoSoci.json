@@ -3,54 +3,70 @@
     "Cognome": "Burecchi",
     "Nome": "Alfonso",
     "Telefono": "3879823897",
-    "Debito": 43
+    "Debito": -23,
+    "Zona": "Bergamo"
   },
   {
     "Cognome": "Sarpini",
     "Nome": "Carlo",
     "Telefono": "3858372639",
-    "Debito": 124
+    "Debito": 124,
+    "Zona": "Seriate"
   },
   {
     "Cognome": "Mantello",
     "Nome": "Giada",
     "Telefono": "3821621827",
-    "Debito": 20
+    "Debito": 20,
+    "Zona": "Montello"
   },
   {
     "Cognome": "Persini",
     "Nome": "Paolo",
     "Telefono": "3892328392",
-    "Debito": 0
+    "Debito": 0,
+    "Zona": "Seriate"
   },
   {
     "Cognome": "Lennaro",
     "Nome": "Samuele",
     "Telefono": "3812182795",
-    "Debito": 210
+    "Debito": -10,
+    "Zona": "Chiuduno"
   },
   {
     "Cognome": "Benovelli",
     "Nome": "Greta",
     "Telefono": "3872376725",
-    "Debito": 0
+    "Debito": 0,
+    "Zona": "Grumello"
   },
   {
     "Cognome": "Mantovani",
     "Nome": "Giorgio",
     "Telefono": "3829827281",
-    "Debito": 65
+    "Debito": 65,
+    "Zona": "Azzano"
   },
   {
     "Cognome": "Bianchi",
     "Nome": "Ludovica",
     "Telefono": "3816723452",
-    "Debito": 32
+    "Debito": 32,
+    "Zona": "Telgate"
   },
   {
     "Cognome": "Barella",
     "Nome": "Mario",
     "Telefono": "3856756271",
-    "Debito": -20
+    "Debito": -20,
+    "Zona": "Romano di Lombardia"
+  },
+  {
+    "Cognome": "Pirelli",
+    "Nome": "Matteo",
+    "Telefono": "3679828712",
+    "Debito": 10,
+    "Zona": "Bergamo"
   }
 ]

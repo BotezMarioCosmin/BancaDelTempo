@@ -113,6 +113,7 @@ namespace BancaDelTempo
                 item.SubItems.Add(s.Nome);
                 item.SubItems.Add(s.Telefono);
                 item.SubItems.Add(s.Debito.ToString());
+                item.SubItems.Add(s.Zona);
 
                 listViewSettings.Items.Add(item);
             }
@@ -134,7 +135,7 @@ namespace BancaDelTempo
                 ListViewItem item = new ListViewItem(s.Cognome);
                 item.SubItems.Add(s.Nome);
                 item.SubItems.Add(s.Telefono);
-
+                item.SubItems.Add(s.Zona);
                 listViewSegreteria.Items.Add(item);
             }
             listSoci = leggiFileJson(elencoSociJsonPath);
@@ -268,7 +269,8 @@ namespace BancaDelTempo
                 if (string.IsNullOrEmpty(textBoxCognome.Text)
         || string.IsNullOrEmpty(textBoxNome.Text)
         || string.IsNullOrEmpty(textBoxTelefono.Text)
-        || string.IsNullOrEmpty(textBoxDebito.Text))
+        || string.IsNullOrEmpty(textBoxDebito.Text)
+        || string.IsNullOrEmpty(textBoxZona.Text))
                 {
                     return;
                 }
@@ -277,7 +279,7 @@ namespace BancaDelTempo
                     try
                     {
                         Socio s = new Socio(textBoxCognome.Text, textBoxNome.Text,
-                            textBoxTelefono.Text, Convert.ToInt32(textBoxDebito.Text));
+                            textBoxTelefono.Text, Convert.ToInt32(textBoxDebito.Text), textBoxZona.Text);
 
                         aggiungiSocioJson(elencoSociJsonPath, s);
                         listViewSettings.Items.Clear();
@@ -296,7 +298,7 @@ namespace BancaDelTempo
             textBoxNome.Text = "Nome";
             textBoxTelefono.Text = "Telefono";
             textBoxDebito.Text = "Debito";
-
+            textBoxZona.Text = "Zona";
         }
 
         private void textBoxCognome_Click(object sender, EventArgs e)
@@ -511,10 +513,33 @@ namespace BancaDelTempo
             listPrestazioni = leggiFileJsonPrestazioni(@"files\Prestazioni.json");
         }
 
+        public List<Prestazione> riordinaListViewPrestazioniOre(List<Prestazione> lp)
+        {
+            return lp.OrderBy(Prestazione => Prestazione.Ore).ToList();
+        }
+
+        public List<Prestazione> riordinaListViewPrestazioniPrestazione(List<Prestazione> lp)
+        {
+            return lp.OrderBy(Prestazione => Prestazione.NomePrestazione).ToList();
+        }
+
+        public List<Prestazione> riordinaListViewPrestazioniData(List<Prestazione> lp)
+        {
+            return lp.OrderBy(Prestazione => Prestazione.Data).ToList();
+        }
+        public List<Prestazione> riordinaListViewPrestazioniPrestante(List<Prestazione> lp)
+        {
+            return lp.OrderBy(Prestazione => Prestazione.Prestante).ToList();
+        }
+        public List<Prestazione> riordinaListViewPrestazioniBeneficiario(List<Prestazione> lp)
+        {
+            return lp.OrderBy(Prestazione => Prestazione.Beneficiario).ToList();
+        }
         private void btnOffriPrestazione_Click(object sender, EventArgs e)
         {
-            if (comboBoxOre.Text != "Ore" && comboBoxBeneficiario.Text != "Beneficiario"
-                && comboBoxPrestazione.Text != "Prestazione")
+            if (comboBoxOre.Text != "Ore" && comboBoxOre.Text != "" && comboBoxBeneficiario.Text != "Beneficiario"
+                && comboBoxBeneficiario.Text != ""
+                &&  comboBoxPrestazione.Text != "Prestazione" && comboBoxPrestazione.Text != "")
             {
                 MessageBox.Show("Prestazione offerta con successo!");
                 utente.SottraiDebito(Convert.ToInt32(comboBoxOre.SelectedItem));
@@ -532,7 +557,7 @@ namespace BancaDelTempo
 
                 listViewPrestazioni.Items.Clear();
                 aggiungiAListViewPrestazioni();
-                
+
 
                 comboBoxPrestazione.Items.Add("Prestazioni");
                 comboBoxOre.Items.Add("Ore");
@@ -544,6 +569,12 @@ namespace BancaDelTempo
             else
             {
                 MessageBox.Show("Valori non validi","Errore");
+                comboBoxPrestazione.Items.Add("Prestazioni");
+                comboBoxOre.Items.Add("Ore");
+                comboBoxBeneficiario.Items.Add("Beneficiario");
+                comboBoxPrestazione.SelectedItem = "Prestazione";
+                comboBoxOre.SelectedItem = "Ore";
+                comboBoxBeneficiario.SelectedItem = "Beneficiario";
             }
 
         }
@@ -642,6 +673,75 @@ namespace BancaDelTempo
         {
             string nuovoJsonText = JsonConvert.SerializeObject(lp, Formatting.Indented);
             File.WriteAllText(@"files\Prestazioni.json", nuovoJsonText);
+        }
+
+        private void checkBoxOrdinaOre_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void radioButtonOre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonOre.Checked == true)
+            {
+                listViewPrestazioni.Items.Clear();
+                refreshJsonFilePrestazioni(riordinaListViewPrestazioniOre(leggiPrestazioni()));
+                aggiungiAListViewPrestazioni();
+            }
+            else { listViewPrestazioni.Items.Clear(); refreshJsonFilePrestazioni(leggiPrestazioni()); aggiungiAListViewPrestazioni(); }
+
+        }
+
+        private void radioButtonData_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonData.Checked == true)
+            {
+                listViewPrestazioni.Items.Clear();
+                refreshJsonFilePrestazioni(riordinaListViewPrestazioniData(leggiPrestazioni()));
+                aggiungiAListViewPrestazioni();
+            }
+            else { listViewPrestazioni.Items.Clear(); refreshJsonFilePrestazioni(leggiPrestazioni()); aggiungiAListViewPrestazioni(); }
+
+        }
+
+        private void radioButtonPrestazione_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonPrestazione.Checked == true)
+            {
+                listViewPrestazioni.Items.Clear();
+                refreshJsonFilePrestazioni(riordinaListViewPrestazioniPrestazione(leggiPrestazioni()));
+                aggiungiAListViewPrestazioni();
+            }
+            else { listViewPrestazioni.Items.Clear(); refreshJsonFilePrestazioni(leggiPrestazioni()); aggiungiAListViewPrestazioni(); }
+
+        }
+
+        private void radioButtonPrestante_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonPrestazione.Checked == true)
+            {
+                listViewPrestazioni.Items.Clear();
+                refreshJsonFilePrestazioni(riordinaListViewPrestazioniPrestante(leggiPrestazioni()));
+                aggiungiAListViewPrestazioni();
+            }
+            else { listViewPrestazioni.Items.Clear(); refreshJsonFilePrestazioni(leggiPrestazioni()); aggiungiAListViewPrestazioni(); }
+
+        }
+
+        private void radioBeneficiario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBeneficiario.Checked == true)
+            {
+                listViewPrestazioni.Items.Clear();
+                refreshJsonFilePrestazioni(riordinaListViewPrestazioniBeneficiario(leggiPrestazioni()));
+                aggiungiAListViewPrestazioni();
+            }
+            else { listViewPrestazioni.Items.Clear(); refreshJsonFilePrestazioni(leggiPrestazioni()); aggiungiAListViewPrestazioni(); }
+
+        }
+
+        private void textBoxZona_Click(object sender, EventArgs e)
+        {
+            textBoxZona.Text = null;
         }
     }
 

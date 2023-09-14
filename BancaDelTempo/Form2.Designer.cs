@@ -50,6 +50,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlSettings = new System.Windows.Forms.Panel();
+            this.textBoxZona = new System.Windows.Forms.TextBox();
             this.btnImpostazioniEliminaSocio = new System.Windows.Forms.Button();
             this.btnImpostazioniAggiungiSocio = new System.Windows.Forms.Button();
             this.lblModificaFile = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlSegreteria = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnApriFileJsonSegreteria = new System.Windows.Forms.Button();
@@ -76,13 +78,19 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlPrestazioni = new System.Windows.Forms.Panel();
+            this.radioButtonOre = new System.Windows.Forms.RadioButton();
+            this.radioButtonPrestazione = new System.Windows.Forms.RadioButton();
+            this.radioButtonData = new System.Windows.Forms.RadioButton();
+            this.radioButtonPrestante = new System.Windows.Forms.RadioButton();
+            this.radioBeneficiario = new System.Windows.Forms.RadioButton();
+            this.lblPrestazioni = new System.Windows.Forms.Label();
             this.comboBoxData = new System.Windows.Forms.ComboBox();
             this.comboBoxBeneficiario = new System.Windows.Forms.ComboBox();
             this.comboBoxPrestazione = new System.Windows.Forms.ComboBox();
             this.comboBoxOre = new System.Windows.Forms.ComboBox();
             this.btnOffriPrestazione = new System.Windows.Forms.Button();
-            this.lblPrestazioni = new System.Windows.Forms.Label();
             this.btnApriFileJson3 = new System.Windows.Forms.Button();
             this.listViewPrestazioni = new System.Windows.Forms.ListView();
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -326,6 +334,7 @@
             // 
             // pnlSettings
             // 
+            this.pnlSettings.Controls.Add(this.textBoxZona);
             this.pnlSettings.Controls.Add(this.btnImpostazioniEliminaSocio);
             this.pnlSettings.Controls.Add(this.btnImpostazioniAggiungiSocio);
             this.pnlSettings.Controls.Add(this.lblModificaFile);
@@ -341,11 +350,24 @@
             this.pnlSettings.Controls.Add(this.textBoxNome);
             this.pnlSettings.Controls.Add(this.textBoxCognome);
             this.pnlSettings.Controls.Add(this.listViewSettings);
-            this.pnlSettings.Location = new System.Drawing.Point(467, 23);
+            this.pnlSettings.Location = new System.Drawing.Point(755, 664);
             this.pnlSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(1416, 1011);
             this.pnlSettings.TabIndex = 19;
+            // 
+            // textBoxZona
+            // 
+            this.textBoxZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(75)))));
+            this.textBoxZona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxZona.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.textBoxZona.Location = new System.Drawing.Point(675, 368);
+            this.textBoxZona.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxZona.Name = "textBoxZona";
+            this.textBoxZona.Size = new System.Drawing.Size(307, 40);
+            this.textBoxZona.TabIndex = 26;
+            this.textBoxZona.Text = "Zona";
+            this.textBoxZona.Click += new System.EventHandler(this.textBoxZona_Click);
             // 
             // btnImpostazioniEliminaSocio
             // 
@@ -370,7 +392,7 @@
             this.btnImpostazioniAggiungiSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImpostazioniAggiungiSocio.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpostazioniAggiungiSocio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnImpostazioniAggiungiSocio.Location = new System.Drawing.Point(654, 355);
+            this.btnImpostazioniAggiungiSocio.Location = new System.Drawing.Point(1022, 355);
             this.btnImpostazioniAggiungiSocio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImpostazioniAggiungiSocio.Name = "btnImpostazioniAggiungiSocio";
             this.btnImpostazioniAggiungiSocio.Size = new System.Drawing.Size(304, 68);
@@ -539,7 +561,8 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader13});
             this.listViewSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewSettings.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.listViewSettings.FullRowSelect = true;
@@ -570,14 +593,19 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Debito (min)";
-            this.columnHeader8.Width = 200;
+            this.columnHeader8.Width = 150;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Zona";
+            this.columnHeader13.Width = 150;
             // 
             // pnlSegreteria
             // 
             this.pnlSegreteria.Controls.Add(this.label1);
             this.pnlSegreteria.Controls.Add(this.btnApriFileJsonSegreteria);
             this.pnlSegreteria.Controls.Add(this.listViewSegreteria);
-            this.pnlSegreteria.Location = new System.Drawing.Point(602, 708);
+            this.pnlSegreteria.Location = new System.Drawing.Point(612, 778);
             this.pnlSegreteria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlSegreteria.Name = "pnlSegreteria";
             this.pnlSegreteria.Size = new System.Drawing.Size(1401, 997);
@@ -616,7 +644,8 @@
             this.listViewSegreteria.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
             this.columnHeader10,
-            this.columnHeader11});
+            this.columnHeader11,
+            this.columnHeader12});
             this.listViewSegreteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewSegreteria.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.listViewSegreteria.FullRowSelect = true;
@@ -632,33 +661,128 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Cognome";
-            this.columnHeader9.Width = 300;
+            this.columnHeader9.Width = 240;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Nome";
-            this.columnHeader10.Width = 300;
+            this.columnHeader10.Width = 240;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Telefono";
-            this.columnHeader11.Width = 300;
+            this.columnHeader11.Width = 240;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Zona";
+            this.columnHeader12.Width = 240;
             // 
             // pnlPrestazioni
             // 
+            this.pnlPrestazioni.Controls.Add(this.radioButtonOre);
+            this.pnlPrestazioni.Controls.Add(this.radioButtonPrestazione);
+            this.pnlPrestazioni.Controls.Add(this.radioButtonData);
+            this.pnlPrestazioni.Controls.Add(this.radioButtonPrestante);
+            this.pnlPrestazioni.Controls.Add(this.radioBeneficiario);
+            this.pnlPrestazioni.Controls.Add(this.lblPrestazioni);
             this.pnlPrestazioni.Controls.Add(this.comboBoxData);
             this.pnlPrestazioni.Controls.Add(this.comboBoxBeneficiario);
             this.pnlPrestazioni.Controls.Add(this.comboBoxPrestazione);
             this.pnlPrestazioni.Controls.Add(this.comboBoxOre);
             this.pnlPrestazioni.Controls.Add(this.btnOffriPrestazione);
-            this.pnlPrestazioni.Controls.Add(this.lblPrestazioni);
             this.pnlPrestazioni.Controls.Add(this.btnApriFileJson3);
             this.pnlPrestazioni.Controls.Add(this.listViewPrestazioni);
-            this.pnlPrestazioni.Location = new System.Drawing.Point(738, 617);
+            this.pnlPrestazioni.Location = new System.Drawing.Point(473, 49);
             this.pnlPrestazioni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPrestazioni.Name = "pnlPrestazioni";
             this.pnlPrestazioni.Size = new System.Drawing.Size(1401, 997);
             this.pnlPrestazioni.TabIndex = 20;
+            // 
+            // radioButtonOre
+            // 
+            this.radioButtonOre.AutoSize = true;
+            this.radioButtonOre.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonOre.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.radioButtonOre.Location = new System.Drawing.Point(4, 938);
+            this.radioButtonOre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonOre.Name = "radioButtonOre";
+            this.radioButtonOre.Size = new System.Drawing.Size(87, 37);
+            this.radioButtonOre.TabIndex = 34;
+            this.radioButtonOre.Text = "Ore";
+            this.radioButtonOre.UseVisualStyleBackColor = true;
+            this.radioButtonOre.CheckedChanged += new System.EventHandler(this.radioButtonOre_CheckedChanged);
+            // 
+            // radioButtonPrestazione
+            // 
+            this.radioButtonPrestazione.AutoSize = true;
+            this.radioButtonPrestazione.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonPrestazione.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.radioButtonPrestazione.Location = new System.Drawing.Point(216, 938);
+            this.radioButtonPrestazione.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonPrestazione.Name = "radioButtonPrestazione";
+            this.radioButtonPrestazione.Size = new System.Drawing.Size(189, 37);
+            this.radioButtonPrestazione.TabIndex = 33;
+            this.radioButtonPrestazione.TabStop = true;
+            this.radioButtonPrestazione.Text = "Prestazione";
+            this.radioButtonPrestazione.UseVisualStyleBackColor = true;
+            this.radioButtonPrestazione.CheckedChanged += new System.EventHandler(this.radioButtonPrestazione_CheckedChanged);
+            // 
+            // radioButtonData
+            // 
+            this.radioButtonData.AutoSize = true;
+            this.radioButtonData.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonData.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.radioButtonData.Location = new System.Drawing.Point(102, 938);
+            this.radioButtonData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonData.Name = "radioButtonData";
+            this.radioButtonData.Size = new System.Drawing.Size(105, 37);
+            this.radioButtonData.TabIndex = 32;
+            this.radioButtonData.TabStop = true;
+            this.radioButtonData.Text = "Data";
+            this.radioButtonData.UseVisualStyleBackColor = true;
+            this.radioButtonData.CheckedChanged += new System.EventHandler(this.radioButtonData_CheckedChanged);
+            // 
+            // radioButtonPrestante
+            // 
+            this.radioButtonPrestante.AutoSize = true;
+            this.radioButtonPrestante.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonPrestante.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.radioButtonPrestante.Location = new System.Drawing.Point(416, 938);
+            this.radioButtonPrestante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButtonPrestante.Name = "radioButtonPrestante";
+            this.radioButtonPrestante.Size = new System.Drawing.Size(161, 37);
+            this.radioButtonPrestante.TabIndex = 31;
+            this.radioButtonPrestante.TabStop = true;
+            this.radioButtonPrestante.Text = "Prestante";
+            this.radioButtonPrestante.UseVisualStyleBackColor = true;
+            this.radioButtonPrestante.CheckedChanged += new System.EventHandler(this.radioButtonPrestante_CheckedChanged);
+            // 
+            // radioBeneficiario
+            // 
+            this.radioBeneficiario.AutoSize = true;
+            this.radioBeneficiario.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBeneficiario.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.radioBeneficiario.Location = new System.Drawing.Point(585, 938);
+            this.radioBeneficiario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioBeneficiario.Name = "radioBeneficiario";
+            this.radioBeneficiario.Size = new System.Drawing.Size(197, 37);
+            this.radioBeneficiario.TabIndex = 30;
+            this.radioBeneficiario.TabStop = true;
+            this.radioBeneficiario.Text = "Beneficiario";
+            this.radioBeneficiario.UseVisualStyleBackColor = true;
+            this.radioBeneficiario.CheckedChanged += new System.EventHandler(this.radioBeneficiario_CheckedChanged);
+            // 
+            // lblPrestazioni
+            // 
+            this.lblPrestazioni.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrestazioni.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblPrestazioni.Location = new System.Drawing.Point(3, 0);
+            this.lblPrestazioni.Name = "lblPrestazioni";
+            this.lblPrestazioni.Size = new System.Drawing.Size(1390, 148);
+            this.lblPrestazioni.TabIndex = 18;
+            this.lblPrestazioni.Text = "Prestazioni";
+            this.lblPrestazioni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxData
             // 
@@ -743,17 +867,6 @@
             this.btnOffriPrestazione.UseVisualStyleBackColor = false;
             this.btnOffriPrestazione.Click += new System.EventHandler(this.btnOffriPrestazione_Click);
             // 
-            // lblPrestazioni
-            // 
-            this.lblPrestazioni.Font = new System.Drawing.Font("Bauhaus 93", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrestazioni.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblPrestazioni.Location = new System.Drawing.Point(3, 0);
-            this.lblPrestazioni.Name = "lblPrestazioni";
-            this.lblPrestazioni.Size = new System.Drawing.Size(1390, 148);
-            this.lblPrestazioni.TabIndex = 18;
-            this.lblPrestazioni.Text = "Prestazioni";
-            this.lblPrestazioni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnApriFileJson3
             // 
             this.btnApriFileJson3.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -822,8 +935,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1896, 1048);
-            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.pnlPrestazioni);
+            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.pnlSegreteria);
             this.Controls.Add(this.pnlSoci);
             this.Controls.Add(this.panel1);
@@ -840,6 +953,7 @@
             this.pnlSettings.PerformLayout();
             this.pnlSegreteria.ResumeLayout(false);
             this.pnlPrestazioni.ResumeLayout(false);
+            this.pnlPrestazioni.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -905,5 +1019,13 @@
         private System.Windows.Forms.ComboBox comboBoxBeneficiario;
         private System.Windows.Forms.ComboBox comboBoxPrestazione;
         private System.Windows.Forms.ComboBox comboBoxOre;
+        private System.Windows.Forms.RadioButton radioButtonPrestante;
+        private System.Windows.Forms.RadioButton radioBeneficiario;
+        private System.Windows.Forms.RadioButton radioButtonOre;
+        private System.Windows.Forms.RadioButton radioButtonPrestazione;
+        private System.Windows.Forms.RadioButton radioButtonData;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.TextBox textBoxZona;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }

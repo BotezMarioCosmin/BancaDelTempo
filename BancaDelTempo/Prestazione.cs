@@ -13,7 +13,6 @@ namespace BancaDelTempo
         private DateTime _data;
         private string _prestante;
         private string _beneficiario;
-
         public int Ore
         { 
             get { return _ore; } 
@@ -90,10 +89,10 @@ namespace BancaDelTempo
         }
 
         public Prestazione(int ore, string nomePrestazione, DateTime data, string prestante, string beneficiario)
-        { 
+        {
             _ore = ore;
-            _nomePrestazione = nomePrestazione; 
-            _data = data;   
+            _nomePrestazione = nomePrestazione;
+            _data = data;
             _prestante = prestante;
             _beneficiario = beneficiario;
         }

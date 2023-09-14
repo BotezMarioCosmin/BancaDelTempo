@@ -12,6 +12,7 @@ namespace BancaDelTempo
         private string _nome;
         private string _telefono;
         private int _debito;
+        private string _zona;
 
         public string Cognome
         {
@@ -69,20 +70,28 @@ namespace BancaDelTempo
             get { return _debito; }
         }
 
+        public string Zona
+        {
+            set { _zona = value; }
+            get { return _zona; }
+        }
+
         public Socio()
         {
             _cognome = "Non specificato";
             _nome = "Non specificato";
             _telefono = "Non specificato";
             _debito = 0;
+            _zona = "Non specificata";
         }
 
-        public Socio(string cognome, string nome, string telefono, int debito)
+        public Socio(string cognome, string nome, string telefono, int debito, string zona)
         { 
             _cognome = cognome;
             _nome = nome;
             _telefono=telefono;
             _debito = debito;
+            _zona = zona;
         }
 
 
@@ -99,10 +108,6 @@ namespace BancaDelTempo
         public void SottraiDebito(int sottrai)
         {
             _debito -= sottrai;
-            if (_debito < 0)
-            { 
-                _debito = 0;
-            }
         }
 
         public void AggiungiDebito(int aggiungi)
@@ -112,7 +117,7 @@ namespace BancaDelTempo
 
         public override string ToString()
         {
-            return string.Format("Socio:\n\tCognome: "+Cognome+"\n\tNome: "+Nome+"\n\tTelefono: "+Telefono+"\n\tDebito: "+Debito);
+            return string.Format("Socio:\n\tCognome: "+Cognome+"\n\tNome: "+Nome+"\n\tTelefono: "+Telefono+"\n\tDebito: "+Debito+"\n\tZona: "+Zona);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace BancaDelTempo
             set { _admin = value; }
         }
 
-        public User(string cognome, string nome, string telefono, int debito, string username, string password, bool admin) : base(cognome, nome, telefono, debito)
+        public User(string cognome, string nome, string telefono, int debito, string zona, string username, string password, bool admin) : base(cognome, nome, telefono, debito, zona)
         {
             _username = username;
             _password = password;
