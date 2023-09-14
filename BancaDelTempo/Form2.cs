@@ -259,36 +259,44 @@ namespace BancaDelTempo
 
         private void btnImpostazioniAggiungiSocio_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxCognome.Text)
-                || string.IsNullOrEmpty(textBoxNome.Text)
-                || string.IsNullOrEmpty(textBoxTelefono.Text)
-                || string.IsNullOrEmpty(textBoxDebito.Text))
+            if (textBoxTelefono.Text.Length != 10)
             {
-                return;
+                MessageBox.Show("il Telefono deve essere composto da 10 cifre!");
             }
             else
             {
-                try
+                if (string.IsNullOrEmpty(textBoxCognome.Text)
+        || string.IsNullOrEmpty(textBoxNome.Text)
+        || string.IsNullOrEmpty(textBoxTelefono.Text)
+        || string.IsNullOrEmpty(textBoxDebito.Text))
                 {
-                    Socio s = new Socio(textBoxCognome.Text, textBoxNome.Text,
-                        textBoxTelefono.Text, Convert.ToInt32(textBoxDebito.Text));
-
-                    aggiungiSocioJson(elencoSociJsonPath, s);
-                    listViewSettings.Items.Clear();
-                    listViewElencoSoci.Items.Clear();
-                    aggiungiAListView();
+                    return;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+                    try
+                    {
+                        Socio s = new Socio(textBoxCognome.Text, textBoxNome.Text,
+                            textBoxTelefono.Text, Convert.ToInt32(textBoxDebito.Text));
 
-                textBoxCognome.Text = "Cognome";
-                textBoxNome.Text = "Nome";
-                textBoxTelefono.Text = "Telefono";
-                textBoxDebito.Text = "Debito";
+                        aggiungiSocioJson(elencoSociJsonPath, s);
+                        listViewSettings.Items.Clear();
+                        listViewElencoSoci.Items.Clear();
+                        aggiungiAListView();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+
+                }
             }
-            
+
+            textBoxCognome.Text = "Cognome";
+            textBoxNome.Text = "Nome";
+            textBoxTelefono.Text = "Telefono";
+            textBoxDebito.Text = "Debito";
+
         }
 
         private void textBoxCognome_Click(object sender, EventArgs e)
@@ -524,7 +532,7 @@ namespace BancaDelTempo
 
                 listViewPrestazioni.Items.Clear();
                 aggiungiAListViewPrestazioni();
-
+                
 
                 comboBoxPrestazione.Items.Add("Prestazioni");
                 comboBoxOre.Items.Add("Ore");

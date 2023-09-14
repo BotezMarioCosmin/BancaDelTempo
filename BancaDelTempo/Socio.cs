@@ -64,14 +64,7 @@ namespace BancaDelTempo
         {
             set
             {
-                if (value >= 0)//il debito può essere solo uguale o maggiore di 0
-                {
-                    _debito = value;
-                }
-                else
-                {
-                    throw new Exception("Il debito non può essere negativo");
-                }
+                _debito = value;
             }
             get { return _debito; }
         }

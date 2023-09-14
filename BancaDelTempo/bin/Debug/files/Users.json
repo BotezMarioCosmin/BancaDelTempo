@@ -25,14 +25,5 @@
     "Nome": "Thomas",
     "Telefono": "5555555555",
     "Debito": 0
-  },
-  {
-    "Username": "miao",
-    "Password": "winx",
-    "Admin": false,
-    "Cognome": "rossi",
-    "Nome": "diego",
-    "Telefono": "4",
-    "Debito": 0
   }
 ]

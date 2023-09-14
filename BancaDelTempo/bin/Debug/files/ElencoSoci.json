@@ -46,5 +46,11 @@
     "Nome": "Ludovica",
     "Telefono": "3816723452",
     "Debito": 32
+  },
+  {
+    "Cognome": "Barella",
+    "Nome": "Mario",
+    "Telefono": "3856756271",
+    "Debito": -20
   }
 ]
