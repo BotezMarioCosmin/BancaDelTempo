@@ -6,7 +6,7 @@
     "Cognome": "Botez",
     "Nome": "Mario Cosmin",
     "Telefono": "3858372639",
-    "Debito": 25,
+    "Debito": 18,
     "Zona": "Telgate"
   },
   {
@@ -38,5 +38,25 @@
     "Telefono": "1111111111",
     "Debito": 0,
     "Zona": "a"
+  },
+  {
+    "Username": "prova",
+    "Password": "prova",
+    "Admin": false,
+    "Cognome": "prova",
+    "Nome": "prova",
+    "Telefono": "1",
+    "Debito": 0,
+    "Zona": "prova"
+  },
+  {
+    "Username": "test",
+    "Password": "test",
+    "Admin": false,
+    "Cognome": "test",
+    "Nome": "test",
+    "Telefono": "1111111111",
+    "Debito": 0,
+    "Zona": "bergamo"
   }
 ]

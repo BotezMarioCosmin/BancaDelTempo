@@ -350,7 +350,7 @@
             this.pnlSettings.Controls.Add(this.textBoxNome);
             this.pnlSettings.Controls.Add(this.textBoxCognome);
             this.pnlSettings.Controls.Add(this.listViewSettings);
-            this.pnlSettings.Location = new System.Drawing.Point(755, 664);
+            this.pnlSettings.Location = new System.Drawing.Point(467, 23);
             this.pnlSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(1416, 1011);
@@ -592,7 +592,7 @@
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Debito (min)";
+            this.columnHeader8.Text = "Debito (ore)";
             this.columnHeader8.Width = 150;
             // 
             // columnHeader13
@@ -693,7 +693,7 @@
             this.pnlPrestazioni.Controls.Add(this.btnOffriPrestazione);
             this.pnlPrestazioni.Controls.Add(this.btnApriFileJson3);
             this.pnlPrestazioni.Controls.Add(this.listViewPrestazioni);
-            this.pnlPrestazioni.Location = new System.Drawing.Point(473, 49);
+            this.pnlPrestazioni.Location = new System.Drawing.Point(646, 710);
             this.pnlPrestazioni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPrestazioni.Name = "pnlPrestazioni";
             this.pnlPrestazioni.Size = new System.Drawing.Size(1401, 997);

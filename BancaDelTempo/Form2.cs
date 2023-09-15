@@ -66,6 +66,11 @@ namespace BancaDelTempo
                 textBoxNome.Hide();
                 textBoxTelefono.Hide();
                 textBoxDebito.Hide();
+                textBoxZona.Hide();
+                btnApriFileJSON.Hide();
+                btnApriFileJson2.Hide();
+                btnApriFileJson3.Hide();
+                btnApriFileJsonSegreteria.Hide();
             }
 
             prestazioni.Add("Riparazione");

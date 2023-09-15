@@ -21,17 +21,24 @@
     "Beneficiario": "Bianchi Ludovica"
   },
   {
-    "Ore": 1,
-    "NomePrestazione": "Torta",
-    "Data": "2023-09-19T07:00:00",
-    "Prestante": "Benovelli Greta",
-    "Beneficiario": "Lennaro Samuele"
+    "Ore": 2,
+    "NomePrestazione": "Pitturare casa",
+    "Data": "2023-09-15T10:38:37",
+    "Prestante": "Botez Mario Cosmin",
+    "Beneficiario": "Bianchi Ludovica"
   },
   {
     "Ore": 2,
     "NomePrestazione": "Riparazione",
     "Data": "2023-11-09T11:00:00",
     "Prestante": "Burecchi Alfonso",
+    "Beneficiario": "Lennaro Samuele"
+  },
+  {
+    "Ore": 1,
+    "NomePrestazione": "Torta",
+    "Data": "2023-09-19T07:00:00",
+    "Prestante": "Benovelli Greta",
     "Beneficiario": "Lennaro Samuele"
   },
   {
@@ -54,5 +61,12 @@
     "Data": "2023-09-13T10:26:49",
     "Prestante": "rossi diego",
     "Beneficiario": "Persini Paolo"
+  },
+  {
+    "Ore": 5,
+    "NomePrestazione": "Taglio erba",
+    "Data": "2023-09-15T10:11:26",
+    "Prestante": "Botez Mario Cosmin",
+    "Beneficiario": "Pirelli Matteo"
   }
 ]
